@@ -1,0 +1,19 @@
+.modal-background .modal-content>button {
+    display: block;
+    
+    background: white;
+    color: #883b5b;
+    font-size: 30px;
+	margin: 5px auto;
+	text-transform: uppercase;
+
+}
+
+.modal .modal-background {
+    background: rgba(136, 59, 91, .86);
+}
+
+.modal-content > .title {
+    color: yellow !important;
+    text-align: center;
+}
