@@ -4,4 +4,4 @@ package-lock.json
 platforms
 hooks
 plugins
-www/assets/models/*
+www/assets/
