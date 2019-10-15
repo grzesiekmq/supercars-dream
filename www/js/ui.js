@@ -7,31 +7,55 @@ const btnGarage = document.querySelector('#garage');
 const btnQuit = document.querySelector('#quit');
 
 let model;
+const baseUrl = 'https://grzesiekmq.github.io/supercars-dream/www/';
 
 entity.addComponent("script");
 entity.script.create(Ui);
 
 Ui.prototype.loadModel = function(modelUrl, scriptName) {
     function callback(err, asset) {
-        model = new pc.Entity();
-        const options = {
-            type: "asset",
-            asset
-        };
-        model.addComponent("model", options);
+        const json = asset.resource;
 
-        model.setLocalPosition(0, 0, 0);
+        const gltf = JSON.parse(json);
 
-        model.addComponent("script");
-        model.script.create(scriptName);
-        app.root.addChild(model);
+        function afterLoad(err, res) {
+
+            console.log(err);
+
+            asset.resource = res.model;
+            asset.loaded = true;
+            app.assets.add(asset);
+
+            model = new pc.Entity();
+            const options = {
+                type: "asset",
+                asset
+
+            };
+            model.addComponent("model", options);
+
+
+            model.addComponent("script");
+            model.script.create(scriptName);
+            app.root.addChild(model);
+
+
+
+            console.log('loaded');
+
+            return model;
+        }
+        console.log(err);
+        loadGltf(gltf, app.graphicsDevice, afterLoad);
 
         console.log(asset);
-        return model;
     }
-    app.assets.loadFromUrl(modelUrl, "model", callback);
+    app.assets.loadFromUrl(modelUrl, "json", callback);
 };
-Ui.prototype.loadModel(`${carsPath}/ferrari-laferrari.json`, "Model");
+
+Ui.prototype.loadModel(`${carsPath}/aston_martin_vulcan.gltf`, "Model");
+
+
 
 function playClick() {
     // const modelUrl = "bmwz4.json";
@@ -41,7 +65,7 @@ function playClick() {
     model.removeComponent("model");
 
     // Ui.prototype.loadModel(modelUrl);
-    // Ui.prototype.loadModel(`${tracksPath}/Laguna_Seca.json`);
+    Ui.prototype.loadModel(`${baseUrl}${tracksPath}/Barcelona.gltf`);
     console.log('button clicked');
 
 }
