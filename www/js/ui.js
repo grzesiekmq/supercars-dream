@@ -53,7 +53,7 @@ Ui.prototype.loadModel = function(modelUrl, scriptName) {
     app.assets.loadFromUrl(modelUrl, "json", callback);
 };
 
-Ui.prototype.loadModel(`${carsPath}/aston_martin_vulcan.gltf`, "Model");
+Ui.prototype.loadModel(`${baseUrl}${carsPath}/aston_martin_vulcan.gltf`, "Model");
 
 
 
