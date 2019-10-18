@@ -1,0 +1,73 @@
+const TestDrive = pc.createScript('TestDrive');
+const btnBrake = document.createElement('button');
+
+
+let pos;
+
+TestDrive.prototype.initialize = function() {
+    // follow a car
+    const followCamera = new pc.Entity();
+    const camOptions = {
+        fov: 45,
+        nearClip: 100,
+        farClip: 10000,
+        clearColor: new pc.Color(0.1, 0.2, 0.3)
+    };
+    followCamera.addComponent('camera', camOptions);
+    followCamera.setLocalPosition(0, 150, -600);
+    followCamera.rotateLocal(0, 180, 0);
+    followCamera.lookAt(this.entity);
+    this.entity.addChild(followCamera);
+console.log('scale', this.entity.getLocalScale());
+    // this.entity.translate(0, -150, 0);
+
+    btnBrake.className = 'brake';
+    btnBrake.textContent = 'brake';
+    document.body.appendChild(btnBrake);
+
+
+    const barcelonaTrack = app.root.findByName("Barcelona.stl");
+    console.log(barcelonaTrack);
+    barcelonaTrack.setLocalScale(5, .5, 5);  
+    barcelonaTrack.setLocalPosition(-100, -50, 20);
+
+
+
+
+};
+
+// update code called every frame
+// Add rotation script to car
+TestDrive.prototype.update = function(dt) {
+    pos = this.entity.getPosition();
+    const posZ = document.querySelector('.z');
+    const distance = pos.z;
+    const kphMultiplier = 3.6;
+    let speed = 0;
+
+    let speedKph = Math.floor(distance * kphMultiplier);
+    const topSpeed = 325;
+    const accelerationPerSecond = 12.077;
+
+    function brake() {
+        this.entity.translate.y -= 1;
+    }
+
+    if (speedKph <= topSpeed) {
+        speed += accelerationPerSecond * kphMultiplier;
+        posZ.innerHTML = `z ${Math.floor(pos.z)} speed ${speedKph} kph distance ${Math.floor(distance)}`;
+
+
+        // console.log('drive');
+
+    }
+
+        
+    
+
+    // this.entity.translate(0, 0, speed * dt);
+
+
+    btnBrake.addEventListener('click', brake);
+
+};

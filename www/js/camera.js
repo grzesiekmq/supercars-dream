@@ -8,6 +8,6 @@ const camOptions = { fov: 45,
 entity.addComponent('camera', camOptions);
 // Set up initial positions and orientations
 
-entity.setLocalPosition(200, 1000, 8000);
+entity.setLocalPosition(0, 50, 600);
 
 pc.app.root.addChild(entity);

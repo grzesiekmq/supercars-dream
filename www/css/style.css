@@ -1,19 +1,42 @@
-.modal-background .modal-content>button {
-    display: block;
-    
+.overlay .overlay-content> .button {
+
+
     background: white;
     color: #883b5b;
-    font-size: 30px;
-	margin: 5px auto;
+	font-size: 20px;
+	margin: 20px auto;
 	text-transform: uppercase;
+	height: 20vh;
+	width: 30vw;
+
+} 
+
+
+.overlay .overlay-content {
+
 
 }
 
-.modal .modal-background {
+ .overlay {
     background: rgba(136, 59, 91, .86);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
 }
 
-.modal-content > .title {
+.overlay-content > .title {
     color: yellow !important;
     text-align: center;
+}
+.brake{
+    position: absolute;
+    width: 15vh;
+    bottom: 10px;
+    left: 40%
+}
+.acc{
+    position: absolute;
+    width: 15vh;
+    bottom: 10px;
+    right: 30%;
 }
