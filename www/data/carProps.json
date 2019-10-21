@@ -1,0 +1,461 @@
+{
+    "acura":
+    {
+        "nsx-r":
+        {
+            "acceleration": 4.9,
+            "topSpeed": 280
+        }
+    },
+    "aston-martin":
+    {
+
+        "vulcan":
+        {
+            "acceleration": 3,
+            "topSpeed": 360
+        },
+
+        "DBR9":
+        {
+            "acceleration": 2.9,
+            "topSpeed": 354,
+        },
+
+        "vanquish":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 329
+        }
+
+    },
+    "audi":
+    {
+        "r18":
+        {
+            "acceleration": 2,
+            "topSpeed": 340
+        },
+        "r8":
+        {
+            "acceleration": 3.7,
+            "topSpeed": 316
+        }
+    },
+    "bentley":
+    {
+        "continental-gt-supersports":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 336
+        }
+    },
+    "bmw":
+    {
+
+        "8-series-concept":
+        {
+            "acceleration": "n/a",
+            "topSpeed": "n/a"
+        },
+        "i8":
+        {
+            "acceleration": 4.1,
+            "topSpeed": 250
+        },
+        "m3":
+        {
+            "acceleration": 4.5,
+            "topSpeed": 282
+        },
+        "m3-gtr":
+        {
+            "acceleration": 3.2,
+            "topSpeed": 322
+        },
+        "m6":
+        {
+            "acceleration": 4.6,
+            "topSpeed": 250
+        }
+
+    },
+    "bugatti":
+    {
+
+        "veyron":
+        {
+            "acceleration": 2.5,
+            "topSpeed": 415
+        },
+        "chiron":
+        {
+            "acceleration": 2.3,
+            "topSpeed": 420
+        }
+    },
+    "chevrolet":
+    {
+
+        "camaro":
+        {
+            "acceleration": 3.5,
+            "topSpeed": 305
+        },
+
+        "corvette-c7":
+        {
+            "acceleration": 3.3,
+            "topSpeed": 297
+        }
+
+    },
+
+    "chrysler":
+    {
+        "me":
+        {
+            "acceleration": 2.9,
+            "topSpeed": 399
+        }
+    },
+    "dodge":
+    {
+        "challenger":
+        {
+            "acceleration": 2.3,
+            "topSpeed": 270
+        },
+        "viper":
+        {
+            "acceleration": 3.2,
+            "topSpeed": 330
+        },
+        "viper-gts":
+        {
+            "acceleration": 4.3,
+            "topSpeed": 284
+        },
+        "viper-srt":
+        {
+            "acceleration": 3.5,
+            "topSpeed": 332
+        }
+
+    },
+    "ferrari":
+    {
+        "458-italia":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 337
+        },
+        "599":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 335
+        },
+        "812-superfast":
+        {
+            "acceleration": 2.9,
+            "topSpeed": 340
+        },
+        "f12":
+        {
+            "acceleration": 3,
+            "topSpeed": 345
+        },
+        "la-ferrari":
+        {
+            "acceleration": 2.6,
+            "topSpeed": 349
+        }
+
+    },
+    "ford":
+    {
+        "gt":
+        {
+            "acceleration": 4,
+            "topSpeed": 348
+        },
+        "mustang":
+        {
+            "acceleration": 4.2,
+            "topSpeed": 249
+        }
+
+    },
+    "hennessey":
+    {
+        "venom-gt":
+        {
+            "acceleration": 2.7,
+            "topSpeed": 447
+        }
+    },
+    "jaguar":
+    {
+        "cx-75":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 330
+        },
+        "f-type":
+        {
+            "acceleration": 3.8,
+            "topSpeed": 299
+        }
+
+    },
+    "koenigsegg":
+    {
+        "one1":
+        {
+            "acceleration": 2.8,
+            "topSpeed": 399
+        },
+        "agera":
+        {
+            "acceleration": 3,
+            "topSpeed": 447
+        }
+    },
+
+    "lamborghini":
+    {
+        "aventador":
+        {
+            "acceleration": 2.8,
+            "topSpeed": 353
+        },
+        "diablo-sv":
+        {
+            "acceleration": 3.9,
+            "topSpeed": 328
+        },
+        "gallardo":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 325
+        },
+        "huracan":
+        {
+            "acceleration": 2.3,
+            "topSpeed": 325
+        },
+        "murcielago":
+        {
+            "acceleration": 2.9,
+            "topSpeed": 329
+        },
+        "urus":
+        {
+            "acceleration": 3.6,
+            "topSpeed": 305
+        },
+        "veneno":
+        {
+            "acceleration": 2.9,
+            "topSpeed": 355
+        }
+
+    },
+
+    "lexus":
+    {
+
+        "lfa":
+        {
+            "acceleration": 3.6,
+            "topSpeed": 325
+        }
+    },
+    "lotus":
+    {
+        "evora":
+        {
+            "acceleration": 4.1,
+            "topSpeed": 299
+        },
+        "exige-s":
+        {
+            "acceleration": 3.8,
+            "topSpeed": 273
+        }
+    },
+    "maserati":
+    {
+        "gt":
+        {
+            "acceleration": 4.7,
+            "topSpeed": 301
+        },
+        "spyder":
+        {
+            "acceleration": 4.8,
+            "topSpeed": 283
+        }
+    },
+    "maybach":
+    {
+        "exelero":
+        {
+            "acceleration": 4.4,
+            "topSpeed": 350
+        }
+    },
+    "mazda":
+    {
+        "mx-5":
+        {
+            "acceleration": 6.5,
+            "topSpeed": 219
+        },
+        "rx-7":
+        {
+            "acceleration": 4.8,
+            "topSpeed": 251
+        },
+        "rx-8":
+        {
+            "acceleration": 6.5,
+            "topSpeed": 240
+        }
+    },
+    "mclaren":
+    {
+        "576-gt":
+        {
+            "acceleration": 3.4,
+            "topSpeed": 328
+        },
+        "f1":
+        {
+            "acceleration": 3.2,
+            "topSpeed": 386
+        },
+        "gt":
+        {
+            "acceleration": 3.1,
+            "topSpeed": 326
+        },
+        "mp4":
+        {
+            "acceleration": 3,
+            "topSpeed": 333
+        },
+        "p1":
+        {
+            "acceleration": 2.8,
+            "topSpeed": 350
+        }
+    },
+
+    "mercedes":
+    {
+        "amg-gts":
+        {
+            "acceleration": 3.3,
+            "topSpeed": 313
+        },
+        "slr-mclaren":
+        {
+            "acceleration": 3.7,
+            "topSpeed": 334
+        },
+        "sls":
+        {
+            "acceleration": 3.7,
+            "topSpeed": 323
+        },
+
+        "sls-amg":
+        {
+            "acceleration": 3.6,
+            "topSpeed": 317
+        }
+    },
+    "mitsubishi":
+    {
+        "lancer-evolution-x":
+        {
+            "acceleration": 3.8,
+            "topSpeed": 250
+        }
+    },
+    "nissan":
+    {
+        "370z":
+        {
+            "acceleration": 5.1,
+            "topSpeed": 253
+        },
+        "gtr-nismo":
+        {
+            "acceleration": 2.8,
+            "topSpeed": 315
+        }
+    },
+    "pagani":
+    {
+        "huayra":
+        {
+            "acceleration": 3.3,
+            "topSpeed": 360
+        },
+        "zonda":
+        {
+            "acceleration": 3.8,
+            "topSpeed": 345
+        }
+    },
+    "porsche":
+    {
+        "918-r-type":
+        {
+            "acceleration": 2.6,
+            "topSpeed": 337
+        },
+        "carrera-gt":
+        {
+            "acceleration": 3.5,
+            "topSpeed": 334
+        },
+
+    },
+    "rolls-royce":
+    {
+        "phantom":
+        {
+            "acceleration": 5.9,
+            "topSpeed": 240
+        }
+    },
+    "ruf":
+    {
+        "rt-12s":
+        {
+            "acceleration": 3.2,
+            "topSpeed": 362
+        }
+    },
+    "subaru":
+    {
+        "impreza-wrx-sti":
+        {
+            "acceleration": 5.5,
+            "topSpeed": 255
+        }
+    },
+    "tesla":
+    {
+        "model-s":
+        {
+            "acceleration": 2.5,
+            "topSpeed": 249
+
+        }
+    }
+
+}

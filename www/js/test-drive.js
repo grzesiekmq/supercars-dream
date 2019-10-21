@@ -1,10 +1,11 @@
 const TestDrive = pc.createScript('TestDrive');
 const btnBrake = document.createElement('button');
 
-
 let pos;
 
 TestDrive.prototype.initialize = function() {
+
+
     // follow a car
     const followCamera = new pc.Entity();
     const camOptions = {
@@ -18,21 +19,22 @@ TestDrive.prototype.initialize = function() {
     followCamera.rotateLocal(0, 180, 0);
     followCamera.lookAt(this.entity);
     this.entity.addChild(followCamera);
-console.log('scale', this.entity.getLocalScale());
+
+
+
+
+
+    console.log('scale', this.entity.getLocalScale());
     // this.entity.translate(0, -150, 0);
 
     btnBrake.className = 'brake';
     btnBrake.textContent = 'brake';
     document.body.appendChild(btnBrake);
 
-
     const barcelonaTrack = app.root.findByName("Barcelona.stl");
     console.log(barcelonaTrack);
-    barcelonaTrack.setLocalScale(5, .5, 5);  
+    barcelonaTrack.setLocalScale(5, .5, 5);
     barcelonaTrack.setLocalPosition(-100, -50, 20);
-
-
-
 
 };
 
@@ -42,32 +44,60 @@ TestDrive.prototype.update = function(dt) {
     pos = this.entity.getPosition();
     const posZ = document.querySelector('.z');
     const distance = pos.z;
-    const kphMultiplier = 3.6;
     let speed = 0;
-
-    let speedKph = Math.floor(distance * kphMultiplier);
+    const self = this;
     const topSpeed = 325;
-    const accelerationPerSecond = 12.077;
+    const acceleration = 2.3;
 
     function brake() {
-        this.entity.translate.y -= 1;
+        self.entity.translate.z -= 1;
     }
-
-    if (speedKph <= topSpeed) {
-        speed += accelerationPerSecond * kphMultiplier;
-        posZ.innerHTML = `z ${Math.floor(pos.z)} speed ${speedKph} kph distance ${Math.floor(distance)}`;
-
-
-        // console.log('drive');
-
-    }
-
-        
     
+    function accelerate(acceleration, topSpeed) {
+        const kphMultiplier = 3.6;
+        let speedKph = Math.floor(distance * kphMultiplier);
 
-    // this.entity.translate(0, 0, speed * dt);
+        const accelerationKph = 100 / acceleration;
+
+        let seconds = 0;
+        const secContainer = document.querySelector('#s');
+
+        if (speedKph <= topSpeed) {
+            speed += accelerationKph;
 
 
-    btnBrake.addEventListener('click', brake);
+            function timer() {
+                seconds++;
+            }
+            let elapsedTime = () => setInterval(timer, 1000);
+            elapsedTime = Math.round(elapsedTime());
+
+            secContainer.innerHTML = `${elapsedTime}`;
+
+
+
+            posZ.innerHTML = `z ${Math.floor(pos.z)}
+             speed ${speedKph} kph
+              distance ${Math.floor(distance)}`;
+
+            // console.log('drive');
+
+            self.entity.translate(0, 0, speed * dt);
+            setTimeout(() => posZ.innerHTML = `${topSpeed} kph`, acceleration);
+        }
+
+
+    }
+    //huracan
+    // accelerate(acceleration + 1.9, 325);
+
+  // tesla
+    // accelerate(2.5 + 1.9, 249);
+
+    btnBrake.addEventListener('touchstart', brake);
+
+
+
+
 
 };
