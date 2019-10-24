@@ -54,13 +54,13 @@ Ui.prototype.loadModel = function(modelUrl, scriptName) {
 
 
 
-// Ui.prototype.loadModel(`${carsPath}/ferrari/ferrari-la-ferrari.gltf`, "Model");
+// Ui.prototype.loadModel(`${carsPath}/ferari/ferari-la-ferari.gltf`, "Model");
 
 
 // function playClick() {
 
 // model from firebase
-    // Ui.prototype.loadModel('https://firebasestorage.googleapis.com/v0/b/supercars-dream.appspot.com/o/tesla-model-s.gltf?alt=media&token=c619500e-4c08-4240-abfd-0b208d61e7a0', 'TestDrive');
+    // Ui.prototype.loadModel('https://firebasestorage.googleapis.com/v0/b/supercars-dream.appspot.com/o/tezla%2Fmodel-s.gltf?alt=media&token=876feba6-f593-4e5d-8fe0-343b75fc0b19', 'TestDrive');
 
 
 document.querySelector('.overlay').style.display = "none";
@@ -68,89 +68,91 @@ document.querySelector('.overlay').style.display = "none";
 // model.removeComponent("model");
 
 /* working             */
-Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-huracan.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmw-8-series-concept.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmw-i8.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bugatti-chiron.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bugatti-veyron.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/chevrolet-camaro.gltf`, "TestDrive");
+
+// Ui.prototype.loadModel(`${carsPath}/bmv/bmv-8-series-concept.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bmv/bmw-i8.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bugati/bugatti-chiron.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bugati/bugatti-veyron.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/hevrolet/chevrolet-camaro.gltf`, "TestDrive");
 
 
-// Ui.prototype.loadModel(`${carsPath}/car-porsche-001.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/hennessey-venom-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/jaguar-cx-75.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/Maserati-GT.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maybach-exelero.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mercedes-benz-sls-amg.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/pagani-zonda.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/rolls-royce-phantom.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/tesla-model-s.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-veneno.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/huracan.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/porshe/car-porsche-001.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/henesey/venom-gt.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/jagur/cx-75.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/mazerati/GT.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maybah/exelero.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/merc/sls-amge.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/pahani/zonda.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/rols-roys/phantom.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/tezla/model-s.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/veneno.gltf`, "TestDrive");
 
 
 
-// Ui.prototype.loadModel(`${carsPath}/chevrolet-corvette-C7.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ford-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ford-mustang.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/jaguar-f-type.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/koeninsegg-agera.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lotus-exige-s.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mitsubishi-lancer-evolution-x.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/nissan-gtr-nismo.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/pagani-huayra.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porsche-918-r-type.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ruf-rt-12s.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/srt-dodge-challenger.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferrari/ferrari-812-superfast.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferrari/ferrari-f12.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-diablo-sv.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-gallardo.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-urus.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mclaren/mclaren-f1.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mclaren/mclaren-mp4.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-C7.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/fort/gt.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/fort/mustang.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/jagur/f-type.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/konigseg/agera.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lotuz/exige-s.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-evolution-x.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/nisan/gtr-nizmo.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/pahani/huayra.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/porshe/918-r-type.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/rufe/rt-12s.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/dodg/zrt-challenger.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/ferari/812-superfast.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/ferari/f12.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/diablo-sv.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/gallardo.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/urus.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maklaren/f1.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maklaren/mp4.gltf`, "TestDrive");
 
-// Ui.prototype.loadModel(`${carsPath}/mclaren/mclaren-p1.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maklaren/p1.gltf`, "TestDrive");
 
 
 
 
 /* wrong position */
-// Ui.prototype.loadModel(`${carsPath}/aston-martin-v12-vanquish.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/chryslerME.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/acura-nsx.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston-martin-DBR9.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston-martin-vulcan.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/audi-r8-fsi.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/audi-r18.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bentley-continental-gt-supersports.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmw-m3.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/BMW-M3-GTR.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmw-m6.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/dodge-viper.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/dodge-viper-gts.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/dodge-viper-srt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/exotic-car.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferrari-599.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/koenigsegg-one1.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lexus-gs.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lexus-lfa.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lotus-evora.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maserati-spyder.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/Mazda-MX-5.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/Mazda-RX-7.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/Mazda-RX-8.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mercedes-amg-gts.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mercedes-benz-slr-mclaren.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/nissan-370z.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porsche-carrera-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porsche-cayman-2017.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/sls-mercedes.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/subaru-impreza-wrx-sti.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferrari/ferrari-458-italia.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-aventador.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/lamborghini-murcielago.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mclaren/mclaren-576-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mclaren/mclaren-GT.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lambo/aventador.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/azton/v12-vanquish.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/hrysler/ME.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/akura/nzx.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/azton/DBR9.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/azton/vulcan.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/4udi/r8-fsi.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/4udi/r18.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bentle/continental-gt-supersports.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bmv/m3.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bmv/M3-GTR.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/bmv/m6.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/dodg/viper.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/dodg/viper-gts.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/dodg/viper-srt.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/other/exotic-car.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/ferari/599.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/konigseg/one1.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/luxus/gs.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/luxus/lfa.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/lotuz/evora.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/mazerati/spyder.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/masda/MX-5.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/masda/RX-7.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/masda/RX-8.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/merc/amge-gts.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/merc/slr-maklaren.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/nisan/370z.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/porshe/carrera-gt.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/porshe/cayman-2017.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/merc/sls.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/zubaru/impreza-wrx-zti.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, "TestDrive");
+
+// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maklaren/576-gt.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/maklaren/GT.gltf`, "TestDrive");
 
 
 

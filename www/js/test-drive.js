@@ -3,7 +3,21 @@ const btnBrake = document.createElement('button');
 
 let pos;
 
+TestDrive.prototype.loadJsonFromRemote = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function() {
+        callback(JSON.parse(this.response));
+    });
+    xhr.open("GET", url);
+    xhr.send();
+};
+
 TestDrive.prototype.initialize = function() {
+    this.loadJsonFromRemote("/www/data/carProps.json", function(cars) {
+  
+        console.log(cars.akura.nzx_r.topSpeed);
+    });
+
 
 
     // follow a car
@@ -52,7 +66,7 @@ TestDrive.prototype.update = function(dt) {
     function brake() {
         self.entity.translate.z -= 1;
     }
-    
+
     function accelerate(acceleration, topSpeed) {
         const kphMultiplier = 3.6;
         let speedKph = Math.floor(distance * kphMultiplier);
@@ -89,10 +103,10 @@ TestDrive.prototype.update = function(dt) {
 
     }
     //huracan
-    // accelerate(acceleration + 1.9, 325);
+    accelerate(acceleration + 1.9, 325);
 
-  // tesla
-    // accelerate(2.5 + 1.9, 249);
+    // tezla
+    accelerate(2.5 + 1.9, 249);
 
     btnBrake.addEventListener('touchstart', brake);
 
