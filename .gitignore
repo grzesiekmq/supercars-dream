@@ -3,4 +3,9 @@ package.json
 package-lock.json
 platforms
 hooks
+<<<<<<< Updated upstream
 plugins
+=======
+plugins
+www/assets/
+>>>>>>> Stashed changes
