@@ -1,6 +1,10 @@
 // Create a PlayCanvas application
 const canvas = document.querySelector("#application-canvas");
-const app = new pc.Application(canvas, {});
+canvas.focus();
+const app = new pc.Application(canvas, {
+    mouse: new pc.Mouse(canvas),
+    keyboard: new pc.Keyboard(window)
+});
 
 app.start();
 

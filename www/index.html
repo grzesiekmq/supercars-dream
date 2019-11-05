@@ -2,33 +2,104 @@
 <html>
 
 <head>
-    <meta http-equiv="origin-trial" data-feature="webvr (for chrome m62+)" data-expires="2017-12-15" content="amt5igtrdfjcwjpdmda8ewoo0n5s9w7czftwspngwsnlskmv0snrdshgozt6spgy9s8zasbx5jmrc2zvrinycw4aaabjeyjvcmlnaw4ioijodhrwczovl3bsyxljyw52lmfzojq0myisimzlyxr1cmuioijxzwjwujeumu02miisimv4cglyesi6mtuxmzmzodiwmswiaxntdwjkb21haw4ionrydwv9" />
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="css/bulma.css">
-
+    <link rel="stylesheet" href="css/framework7.css">
     <title>Supercars dream</title>
 </head>
 
 <body>
-    <div class="modal is-active">
-        <div class="modal-background">
-            <div class="modal-content">
-                <h1 class="title has-text-primary is-1">Supercars dream</h1>
-                <button class="button is-primary" id="play">play</button>
-                <button class="button is-primary" id="garage">garage</button>
-                <button class="button is-primary" id="quit">quit</button>
+    <div id="app">
+        <div class="overlay">
+            <div class="overlay-content">
+                <h1 class="title">Supercars dream</h1>
+                <a class="button" id="play">play</a>
+                <a class="button" id="garage">garage</a>
+                <button class="button" id="quit">quit</button>
             </div>
         </div>
     </div>
+    <div id="debug">
+        <div class="z"></div>
+        <div class="timer">
+            <span id="m">00</span>:
+            <span id="s">00</span>
+        </div>
+    </div>
     <canvas id="application-canvas"></canvas>
+    <!-- tracks selection -->
+    <script id="template-tracks" type="text/template7">
+        <p class="tracks-title">Track selection</p>
+    <div class="block tracks">
+        <div class="row">
+        {{#each tracks}}
+            <div class="col-20">
+                <div class="item-title">{{name}}</div>
+                <img src={{image}} width="50" height="50">
+            </div>
+        {{/each}}
+        </div>
+    
+    </div>
+
+    </script>
+    <!-- car selection -->
+    <script id="template-cars" type="text/template7">
+                <p class="cars-title">Car selection</p>
+
+        <div class="block cars">
+        <div class="row">
+            {{#each makes}}
+            <div class="col-20">
+                {{this}}
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script id="template-models" type="text/template7">
+        <div class="block models">
+        <div class="row">
+            {{#if a4udi}}
+            
+            {{#each a4udi}}
+            <div class="col-20">
+                {{this}}
+            </div>
+            {{/each}}
+            {{/if}}
+
+
+            
+        </div>
+    </script>
+
+    <style>
+        .block.cars .row .col-20
+         {
+            width: 15vw;
+    height: 15vh;
+    background: yellow;
+    margin: 40px;
+    display: inline-block;
+    text-align: center;
+        }
+    </style>
+    
     <script src="cordova.js"></script>
     <script src="js/lib/playcanvas-stable.js"></script>
+    <script src="js/lib/playcanvas-gltf.js"></script>
+    <script src="js/lib/framework7.js"></script>
+
     <script src="js/app.js"></script>
+    <script src="js/main-menu.js"></script>
     <script src="js/model.js"></script>
+    <script src="js/test-drive.js"></script>
+    <script src="js/helpers/first_person_camera.js"></script>
     <script src="js/camera.js"></script>
     <script src="js/light.js"></script>
     <script src="js/ui.js"></script>
+    <script src="js/turn-test.js"></script>
 </body>
 
 </html>
