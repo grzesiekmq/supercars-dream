@@ -2,9 +2,17 @@
 <html>
 
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport'
+        content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
     <link rel="stylesheet" href="css/framework7.css">
+
+    <iframe id="template-modes" src="partials/modes.html" style="display:none"></iframe>
+
+    <iframe id="template-tracks" src="partials/tracks.html" style="display:none"></iframe>
+    <iframe id="template-makes" src="partials/makes.html" style="display:none"></iframe>
+    <iframe id="template-models" src="partials/models.html" style="display:none"></iframe>
+
     <title>Supercars dream</title>
 </head>
 
@@ -27,65 +35,20 @@
         </div>
     </div>
     <canvas id="application-canvas"></canvas>
-    <!-- tracks selection -->
-    <script id="template-tracks" type="text/template7">
-        <p class="tracks-title">Track selection</p>
-    <div class="block tracks">
-        <div class="row">
-        {{#each tracks}}
-            <div class="col-20">
-                <div class="item-title">{{name}}</div>
-                <img src={{image}} width="50" height="50">
-            </div>
-        {{/each}}
-        </div>
-    
-    </div>
 
-    </script>
-    <!-- car selection -->
-    <script id="template-cars" type="text/template7">
-                <p class="cars-title">Car selection</p>
-
-        <div class="block cars">
-        <div class="row">
-            {{#each makes}}
-            <div class="col-20">
-                {{this}}
-            </div>
-            {{/each}}
-        </div>
-    </script>
-
-    <script id="template-models" type="text/template7">
-        <div class="block models">
-        <div class="row">
-            {{#if a4udi}}
-            
-            {{#each a4udi}}
-            <div class="col-20">
-                {{this}}
-            </div>
-            {{/each}}
-            {{/if}}
-
-
-            
-        </div>
-    </script>
 
     <style>
-        .block.cars .row .col-20
-         {
+        .block.cars .row .col-20,
+        .block.models .row .col-20 {
             width: 15vw;
-    height: 15vh;
-    background: yellow;
-    margin: 40px;
-    display: inline-block;
-    text-align: center;
+            height: 15vh;
+            background: yellow;
+            margin: 40px;
+            display: inline-block;
+            text-align: center;
         }
     </style>
-    
+
     <script src="cordova.js"></script>
     <script src="js/lib/playcanvas-stable.js"></script>
     <script src="js/lib/playcanvas-gltf.js"></script>

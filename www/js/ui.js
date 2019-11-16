@@ -8,7 +8,7 @@ let modelEntity;
 entity.addComponent("script");
 entity.script.create(Ui);
 
-Ui.prototype.loadModel = function(modelUrl, scriptName) {
+Ui.prototype.loadModel = function (modelUrl, scriptName) {
     function callback(err, asset) {
         const json = asset.resource;
 
@@ -65,8 +65,7 @@ Ui.prototype.loadModel = function(modelUrl, scriptName) {
 // Ui.prototype.loadModel(`${carsPath}/4udi/rs7.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/4udi/r8-fsi.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/4udi/r18.gltf`, "TurnTest");
-            // Ui.prototype.loadModel(`${carsPath}/4udi/avus.gltf`, "TurnTest");
-
+// Ui.prototype.loadModel(`${carsPath}/4udi/avus.gltf`, "TurnTest");
 
 // Ui.prototype.loadModel(`${carsPath}/akura/nzx.gltf`, "TurnTest");
 
@@ -273,250 +272,267 @@ function hideOverlay() {
 
 }
 
-
-
-
-
-
-
-
 function playClick() {
-
     const $$ = Dom7;
-    const template = $$('#template-tracks').html();
+
+    function loadTemplate(iframeId, id) {
+        const iFrame = document.querySelector(iframeId);
+        if (!iFrame || !iFrame.contentDocument) {
+            console.log('missing iframe or iframe can not be retrieved ' + iframeId);
+            return "";
+        }
+
+        const el = iFrame.contentDocument.querySelector(id);
+        if (!el) {
+            console.log('iframe element can not be located ' + id);
+            return "";
+        }
+
+        return el;
+    }
+
+    const tpl = loadTemplate('#template-modes', '#modes');
+
+    const template = $$(tpl).html();
+
     const compiledTemplate = Template7.compile(template);
-    const trackImages = 'assets/models/tracks/images/';
-    const context = {
-        tracks: [
+    const modes = compiledTemplate();
 
-            { name: 'Barcelona' },
-            { image: `${trackImages}Barcelona.jpg` },
+    // add modes
+    overlay.innerHTML = modes;
 
-            { name: 'Bathurst' },
-            { image: `${trackImages}Bathurst.jpg` },
+    const btnFree = document.querySelector('#free');
+    const btnCareer = document.querySelector('#career');
 
-            { name: 'Brands_Hatch' },
-            { image: `${trackImages}Brands_Hatch.jpg` },
-
-            { name: 'Circuit_DeLa_Sarthe' },
-            { image: `${trackImages}Circuit_DeLa_Sarthe.jpg` },
-
-            { name: 'Hungaroring' },
-            { image: `${trackImages}Hungaroring.jpg` },
-
-            { name: 'Indianapolis' },
-            { image: `${trackImages}Indianapolis.jpg` },
-
-            { name: 'Interlagos' },
-            { image: `${trackImages}Interlagos.jpg` },
-
-            { name: 'Isle_of_Man' },
-            { image: `${trackImages}Isle_of_Man.jpg` },
-
-            { name: 'Kyalami' },
-            { image: `${trackImages}Kyalami.jpg` },
-
-            { name: 'Laguna_Seca' },
-            { image: `${trackImages}Laguna_Seca.jpg` },
-
-            { name: 'Le_Mans' },
-            { image: `${trackImages}Le_Mans.jpg` },
-
-            { name: 'Magny_Cours' },
-            { image: `${trackImages}Magny_Cours.jpg` },
-
-            { name: 'Monaco' },
-            { image: `${trackImages}Monaco.jpg` },
-
-            { name: 'Montreal' },
-            { image: `${trackImages}Montreal.jpg` },
-
-            { name: 'Monza' },
-            { image: `${trackImages}Monza.jpg` },
-
-            { name: 'Nurburgring' },
-            { image: `${trackImages}Nurburgring.jpg` },
-
-            { name: 'Red_Bull_Ring' },
-            { image: `${trackImages}Red_Bull_Ring.jpg` },
-
-            { name: 'Silverstone' },
-            { image: `${trackImages}Silverstone.jpg` },
-
-            { name: 'Spa-Francorchamps' },
-            { image: `${trackImages}Spa-Francorchamps.jpg` },
-
-            { name: 'Suzuka' },
-            { image: `${trackImages}Suzuka.jpg` },
-
-            { name: 'Zandvoort' },
-            { image: `${trackImages}Zandvoort.jpg` }
-
-        ]
-
-    };
-    const html = compiledTemplate(context);
-
-    // console.log(html);
-
-    overlay.innerHTML = html;
-
-    const track = document.querySelector('.tracks .row .col-20');
-    const tracks = document.querySelector('.tracks');
-    const tracksTitle = document.querySelector('.tracks-title');
-    const make = document.querySelector('.tracks .row .col-20');
-
-    function hideTracks() {
-        tracks.style.display = 'none';
-
-    }
-
-    function trackSelect() {
-
-
-Ui.prototype.loadModel(`${tracksPath}/testing/barcelona.gltf`);
-
-// hide temporary track model
-app.root.findByName('modelEntity').enabled = false;
-
-
-        hideTracks();
-        carSelect();
-
-    }
-
-
-    function carSelect() {
-
-        const template = $$('#template-cars').html();
-        const compiledTemplate = Template7.compile(template);
+    function freeClick() {
+        const tpl = loadTemplate('#template-tracks', '#tracks');
+        const trackImages = 'assets/models/tracks/images/';
         const context = {
-            makes: [
-                '4udi',
-                'akura',
-                'alfa',
-                'aston',
-                'bentle',
-                'bmv',
-                'bugati',
-                'cadilac',
-                'chonda',
-                'citron',
-                'dodg',
-                'ferari',
-                'fort',
-                'henesey',
-                'hevrolet',
-                'holdem',
-                'hrysler',
-                'jagur',
-                'konigseg',
-                'lambo',
-                'lotuz',
-                'luxus',
-                'maklaren',
-                'masda',
-                'maybah',
-                'mazerati',
-                'merc',
-                'mitsushi',
-                'nisan',
-                'other',
-                'pahani',
-                'pontiak',
-                'porshe',
-                'rols-roys',
-                'rufe',
-                'sab',
-                'salen',
-                'shelbi',
-                'tezla',
-                'tojota',
-                'twr',
-                'vendeta',
-                'vw',
-                'zenwo',
-                'zubaru'
+            tracks: [
+
+                { name: 'Barcelona' },
+                { image: `${trackImages}Barcelona.jpg` },
+
+                { name: 'Bathurst' },
+                { image: `${trackImages}Bathurst.jpg` },
+
+                { name: 'Brands_Hatch' },
+                { image: `${trackImages}Brands_Hatch.jpg` },
+
+                { name: 'Circuit_DeLa_Sarthe' },
+                { image: `${trackImages}Circuit_DeLa_Sarthe.jpg` },
+
+                { name: 'Hungaroring' },
+                { image: `${trackImages}Hungaroring.jpg` },
+
+                { name: 'Indianapolis' },
+                { image: `${trackImages}Indianapolis.jpg` },
+
+                { name: 'Interlagos' },
+                { image: `${trackImages}Interlagos.jpg` },
+
+                { name: 'Isle_of_Man' },
+                { image: `${trackImages}Isle_of_Man.jpg` },
+
+                { name: 'Kyalami' },
+                { image: `${trackImages}Kyalami.jpg` },
+
+                { name: 'Laguna_Seca' },
+                { image: `${trackImages}Laguna_Seca.jpg` },
+
+                { name: 'Le_Mans' },
+                { image: `${trackImages}Le_Mans.jpg` },
+
+                { name: 'Magny_Cours' },
+                { image: `${trackImages}Magny_Cours.jpg` },
+
+                { name: 'Monaco' },
+                { image: `${trackImages}Monaco.jpg` },
+
+                { name: 'Montreal' },
+                { image: `${trackImages}Montreal.jpg` },
+
+                { name: 'Monza' },
+                { image: `${trackImages}Monza.jpg` },
+
+                { name: 'Nurburgring' },
+                { image: `${trackImages}Nurburgring.jpg` },
+
+                { name: 'Red_Bull_Ring' },
+                { image: `${trackImages}Red_Bull_Ring.jpg` },
+
+                { name: 'Silverstone' },
+                { image: `${trackImages}Silverstone.jpg` },
+
+                { name: 'Spa-Francorchamps' },
+                { image: `${trackImages}Spa-Francorchamps.jpg` },
+
+                { name: 'Suzuka' },
+                { image: `${trackImages}Suzuka.jpg` },
+
+                { name: 'Zandvoort' },
+                { image: `${trackImages}Zandvoort.jpg` }
+
             ]
+
         };
 
-        const html = compiledTemplate(context);
-
-        function makeSelect() {
-
-
-            overlay.innerHTML = html;
-
-
-        }
-
-        function modelSelect() {
-                    const template = $$('#template-models').html();
+        const template = $$(tpl).html();
         const compiledTemplate = Template7.compile(template);
-        const context = {
-            a4udi: ['a8', 'avus', 'r18', 'r8-fsi', 'rs7', 'rsq', 'tt-clubsport'],
-            akura: ['nzx', 'xrx', 'NZX_GT3'],
 
+        const tracks = compiledTemplate(context);
 
-        };
-        function getMake()
-        {
+        // add tracks
+        overlay.innerHTML = tracks;
 
+        const track = document.querySelector('.tracks .row .col-20');
+        const tracksContainer = document.querySelector('.tracks');
 
-        // if (event.target.value === context.a4udi) {
-        //     console.log(event.target);
-        //     return context.a4udi;
-        // }
-        
-
+        function hideTracks() {
+            tracksContainer.style.display = 'none';
 
         }
-        function getModel()
-        {
-            hideOverlay();
+        function trackSelect() {
+            function showMakes() {
 
-Ui.prototype.loadModel(`${carsPath}/aston/DBR9.gltf`, "TurnTest");
+                const tpl = loadTemplate('#template-makes', '#makes');
 
-divApp.innerHTML = `DBR9
-<button class="select-car">Select</button>`;
+                const template = $$(tpl).html();
+                const compiledTemplate = Template7.compile(template);
+                const context = {
+                    makes: [
+                        '4udi',
+                        'akura',
+                        'alfa',
+                        'aston',
+                        'bentle',
+                        'bmv',
+                        'bugati',
+                        'cadilac',
+                        'chonda',
+                        'citron',
+                        'dodg',
+                        'ferari',
+                        'fort',
+                        'henesey',
+                        'hevrolet',
+                        'holdem',
+                        'hrysler',
+                        'jagur',
+                        'konigseg',
+                        'lambo',
+                        'lotuz',
+                        'luxus',
+                        'maklaren',
+                        'masda',
+                        'maybah',
+                        'mazerati',
+                        'merc',
+                        'mitsushi',
+                        'nisan',
+                        'other',
+                        'pahani',
+                        'pontiak',
+                        'porshe',
+                        'rols-roys',
+                        'rufe',
+                        'sab',
+                        'salen',
+                        'shelbi',
+                        'tezla',
+                        'tojota',
+                        'twr',
+                        'vendeta',
+                        'vw',
+                        'zenwo',
+                        'zubaru'
+                    ]
+                };
 
+                const makes = compiledTemplate(context);
 
-// for debugging
-entity.addComponent("script");
-  // entity.script.create("firstPersonCamera");
+                overlay.innerHTML = makes;
 
+            }
+            function showModels() {
 
+                const tpl = loadTemplate('#template-models', '#models');
 
-function selectCar()
-{
-    modelEntity.removeComponent('script');
-    modelEntity.removeComponent('model');
+                const template = $$(tpl).html();
+                const compiledTemplate = Template7.compile(template);
+                const context = {
+                    a4udi: ['a8', 'avus', 'r18', 'r8-fsi', 'rs7', 'rsq', 'tt-clubsport'],
+                    akura: ['nzx', 'xrx', 'NZX_GT3'],
 
-    modelEntity.addComponent('script');
-    modelEntity.script.create('TestDrive');
+                };
+                function getMake() {
 
+                    // if (event.target.value === context.a4udi) {
+                    //     console.log(event.target);
+                    //     return context.a4udi;
+                    // }
 
+                }
 
+                const models = compiledTemplate(context);
 
-}
-document.querySelector('.select-car').addEventListener('click', selectCar);
+                overlay.innerHTML = models;
+
+                const model = document.querySelector('.models .row .col-20');
+
+                function getModel() {
+                    hideOverlay();
+
+                    Ui.prototype.loadModel(`${carsPath}/aston/DBR9.gltf`, "TurnTest");
+
+                    divApp.innerHTML = `DBR9
+                    <button class="select-car">Select</button>`;
+
+                    // for debugging
+                    entity.addComponent("script");
+                    // entity.script.create("firstPersonCamera");
+
+                    function selectCar() {
+                        modelEntity.removeComponent('script');
+                        modelEntity.removeComponent('model');
+
+                        modelEntity.addComponent('script');
+                        modelEntity.script.create('TestDrive');
+
+                    }
+                    document.querySelector('.select-car').addEventListener('click', selectCar);
+
+                }
+
+                model.addEventListener('click', getModel);
+
+            }
+
+            Ui.prototype.loadModel(`${tracksPath}/testing/barcelona.gltf`);
+
+            // hide temporary track model
+            app.root.findByName('modelEntity').enabled = false;
+
+            hideTracks();
+            showMakes();
+
+            const make = document.querySelector('.cars .row .col-20');
+
+            make.addEventListener('click', showModels);
 
         }
 
-                const html = compiledTemplate(context);
+        track.addEventListener('click', trackSelect);
 
-                overlay.innerHTML = html;
-        getModel();
-        }
-        makeSelect();
-        modelSelect();
-
-
-
-    make.addEventListener('touchstart', makeSelect);
     }
 
-    track.addEventListener('click', trackSelect);
+    function careerClick() {
+        console.log('career');
+    }
+    btnFree.addEventListener('click', freeClick);
+
+    btnCareer.addEventListener('click', careerClick);
+
 }
 
 btnPlay.addEventListener('click', playClick);
@@ -587,10 +603,6 @@ btnPlay.addEventListener('click', playClick);
 // Ui.prototype.loadModel(`${carsPath}/tezla/model-s.gltf`, "TestDrive");
 
 // Ui.prototype.loadModel(`${carsPath}/mazerati/mc12.gltf`, "TestDrive");
-
-
-
-
 
 // issue with textures path
 // Ui.prototype.loadModel(`${carsPath}/akura/NZX_GT3/NZX_GT3.gltf`, "TestDrive");
@@ -743,6 +755,6 @@ btnPlay.addEventListener('click', playClick);
 // Ui.prototype.loadModel(`${carsPath}/zubaru/b11s.gltf`, "TestDrive");
 // Ui.prototype.loadModel(`${carsPath}/zubaru/impreza.gltf`, "TestDrive");
 
-Ui.prototype.initialize = function() {
+Ui.prototype.initialize = function () {
 
 };

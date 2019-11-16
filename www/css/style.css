@@ -1,4 +1,4 @@
-.overlay .overlay-content>.button {
+.overlay .button {
 
 
     background: white;
@@ -12,7 +12,7 @@
 }
 
 
-.overlay .overlay-content {}
+
 
 .overlay {
     background: rgba(136, 59, 91, .86);
@@ -21,7 +21,7 @@
     position: absolute;
 }
 
-.overlay-content>.title {
+.overlay .title {
     color: yellow !important;
     text-align: center;
 }
