@@ -1,23 +1,38 @@
 const MainMenu = pc.createScript('MainMenu');
 
-
 const btnPlay = document.querySelector('#play');
 const btnGarage = document.querySelector('#garage');
 const btnQuit = document.querySelector('#quit');
 
-function onQuit()
+function onQuit() {
 
+    const options =
+    {
+        title: "Are you sure you want to quit game?",
 
-   {
-        const quit = confirm("Are you sure you want to quit game?");
-        if (quit) {
+        actions: [{
+            caption: 'Yes',
+            cls: "js-dialog-close primary",
+            onclick: function () {
+                cordova.plugins.exit();
 
-            console.log('quit');
+            }
+
+        },
+        {
+            caption: 'No',
+            onclick: function () {
+                Metro.dialog.close(quit);
+            }
+
         }
-    }
-    btnQuit.addEventListener('touchstart', onQuit);
+        ]
+    };
+    const quit = Metro.dialog.create(options);
 
-MainMenu.prototype.initialize = function() {
+}
+btnQuit.addEventListener('touchstart', onQuit);
 
+MainMenu.prototype.initialize = function () {
 
 };

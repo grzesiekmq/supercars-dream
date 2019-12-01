@@ -4,7 +4,7 @@ const camOptions = {
     fov: 10,
     nearClip: 100,
     farClip: 10000,
-    clearColor: new pc.Color(136/255, 59/255, 91/255)
+    clearColor: new pc.Color(29/255, 29/255, 29/255)
 };
 entity.addComponent('camera', camOptions);
 // Set up initial positions and orientations

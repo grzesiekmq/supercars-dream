@@ -11,3 +11,7 @@ app.start();
 // Fill the available space at full resolution
 app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
 app.setCanvasResolution(pc.RESOLUTION_AUTO);
+
+
+
+  

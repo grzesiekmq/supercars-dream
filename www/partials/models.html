@@ -1,18 +1,28 @@
 <div id="models">
         <div class="page-content">
+            <a href="" class="tile-medium mx-auto my-4 p-1 text-center text-upper va-middle bg-dark border bd-cobalt outline ol-lightTeal fg-cyan">
+                    <h2>
+
+                        back
+                    </h2>
+                </a>
+                <h2 class="cars-title fg-cobalt text-center">Model selection</h2>
 
     <div class="block models">
         <div class="row">
-            {{#if a4udi}}
+            
 
-            {{#each a4udi}}
-            <div class="col-20">
-                {{this}}
-            </div>
+            {{#each model}}
+            <button class="col-20 tile-medium mx-auto my-4 p-1 va-middle bg-dark border bd-cobalt outline ol-lightTeal fg-cyan">
+               <h2 class="model-name">
+                   {{this}}
+               </h2>
+            </button>
             {{/each}}
-            {{/if}}
+        
 
 
+            
 
         </div>
     </div>

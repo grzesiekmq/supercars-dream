@@ -5,7 +5,9 @@
     <meta name='viewport'
         content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="css/framework7.css">
+
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <iframe id="template-modes" src="partials/modes.html" style="display:none"></iframe>
 
@@ -14,20 +16,36 @@
     <iframe id="template-models" src="partials/models.html" style="display:none"></iframe>
 
     <title>Supercars dream</title>
+
 </head>
 
 <body>
-    <div id="app">
-        <div class="overlay">
-            <div class="overlay-content">
-                <h1 class="title">Supercars dream</h1>
-                <a class="button" id="play">play</a>
-                <a class="button" id="garage">garage</a>
-                <button class="button" id="quit">quit</button>
-            </div>
-        </div>
+    <div id="view">
+
+        <h1 class="title fg-cobalt text-center">Supercars dream</h1>
+        <a class="tile-medium mx-auto my-4 p-1 text-center bg-dark border bd-cobalt outline ol-lightTeal fg-cyan flex-align-start"
+            id="play">
+            <h2>
+
+                play
+            </h2>
+        </a>
+        <a class="tile-medium mx-auto my-4 p-1 text-center bg-dark border bd-cobalt outline ol-lightTeal fg-cyan"
+            id="garage">
+            <h2>
+
+                garage
+            </h2>
+        </a>
+        <button class="tile-medium mx-auto my-4 p-1 bg-dark border bd-cobalt outline ol-lightTeal fg-cyan" id="quit">
+            <h2>
+
+                quit
+            </h2>
+        </button>
+
     </div>
-    <div id="debug">
+    <div id="debug" class="fg-cyan">
         <div class="z"></div>
         <div class="timer">
             <span id="m">00</span>:
@@ -36,24 +54,30 @@
     </div>
     <canvas id="application-canvas"></canvas>
 
-
     <style>
-        .block.cars .row .col-20,
+        .block.cars .row .col-100,
         .block.models .row .col-20,
         .block.tracks .row .col-20 {
-            width: 19vw;
-            height: 15vh;
-            background: yellow;
-            margin: 40px;
+            width: 62vw;
+
+            padding: 5px;
+
+            margin: 30px 30px;
             display: inline-block;
             text-align: center;
+
+            font-size: 23px;
+
         }
     </style>
 
     <script src="cordova.js"></script>
-    <script src="js/lib/playcanvas-stable.js"></script>
+    <script src="https://code.playcanvas.com/playcanvas-stable.js"></script>
     <script src="js/lib/playcanvas-gltf.js"></script>
     <script src="js/lib/framework7.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.js"></script>
+
+    <!-- <script src="js/routing.js"></script> -->
 
     <script src="js/app.js"></script>
     <script src="js/main-menu.js"></script>

@@ -1,42 +1,15 @@
-.overlay .button {
-
-
-    background: white;
-    color: #883b5b;
-    font-size: 20px;
-    margin: 20px auto;
-    text-transform: uppercase;
-    height: 20vh;
-    width: 30vw;
-
+body {
+    background: #1d1d1d;
 }
 
-
-
-
-.overlay {
-    background: rgba(136, 59, 91, .86);
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-}
-
-.overlay .title {
-    color: yellow !important;
-    text-align: center;
-}
-
-
-.left,
-.right,
-.brake {
+.left, .right, .brake {
     position: absolute;
     width: 15vh;
     bottom: 10px;
-
 }
+
 .brake {
-   left: 40%;
+    left: 40%;
 }
 
 .left {
