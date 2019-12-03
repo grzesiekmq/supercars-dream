@@ -23,26 +23,36 @@
     <div id="view">
 
         <h1 class="title fg-cobalt text-center">Supercars dream</h1>
-        <a class="tile-medium mx-auto my-4 p-1 text-center bg-dark border bd-cobalt outline ol-lightTeal fg-cyan flex-align-start"
-            id="play">
-            <h2>
+        <ul class="inline-list text-center">
 
-                play
-            </h2>
-        </a>
-        <a class="tile-medium mx-auto my-4 p-1 text-center bg-dark border bd-cobalt outline ol-lightTeal fg-cyan"
-            id="garage">
-            <h2>
+            <li>
 
-                garage
-            </h2>
-        </a>
-        <button class="tile-medium mx-auto my-4 p-1 bg-dark border bd-cobalt outline ol-lightTeal fg-cyan" id="quit">
-            <h2>
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-cobalt border bd-cobalt outline ol-lightTeal fg-white"
+                    id="play">
+                    <h2>
+                        play
+                    </h2>
+                </a>
+            </li>
+            <li>
 
-                quit
-            </h2>
-        </button>
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-cobalt border bd-cobalt outline ol-lightTeal fg-white"
+                    id="garage">
+                    <h2>
+                        garage
+                    </h2>
+                </a>
+            </li>
+            <li>
+
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-cobalt border bd-cobalt outline ol-lightTeal fg-white"
+                    id="quit">
+                    <h2>
+                        quit
+                    </h2>
+                </a>
+            </li>
+        </ul>
 
     </div>
     <div id="debug" class="fg-cyan">
@@ -53,23 +63,6 @@
         </div>
     </div>
     <canvas id="application-canvas"></canvas>
-
-    <style>
-        .block.cars .row .col-100,
-        .block.models .row .col-20,
-        .block.tracks .row .col-20 {
-            width: 62vw;
-
-            padding: 5px;
-
-            margin: 30px 30px;
-            display: inline-block;
-            text-align: center;
-
-            font-size: 23px;
-
-        }
-    </style>
 
     <script src="cordova.js"></script>
     <script src="https://code.playcanvas.com/playcanvas-stable.js"></script>

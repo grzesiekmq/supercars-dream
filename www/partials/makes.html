@@ -1,23 +1,23 @@
 <div id="makes">
         <div class="page-content">
 
-            <a href="" class="tile-medium mx-auto my-4 p-1 text-center text-upper va-middle bg-dark border bd-cobalt outline ol-lightTeal fg-cyan">
+            <a href="" class="tile-medium mt-1 p-1 text-center text-upper va-middle bg-white border bd-cobalt fg-cobalt">
                     <h2>
         
                         back
                     </h2>
                 </a>
-    <h2 class="cars-title fg-cobalt text-center">Make selection</h2>
+    <h2 class="cars-title fg-cobalt text-center mt-14-minus">Make selection</h2>
     <div class="block cars">
         <div class="row">
             {{#each makes}}
             
-            <a class="col-100 tile-medium mx-auto my-4 p-1 va-middle bg-dark border bd-cobalt outline ol-lightTeal fg-cyan" id="{{@index}}">
+            <a class="col-100 tile-small m-2 p-1 va-middle bg-cobalt border bd-cobalt outline ol-lightTeal fg-white" id="{{@index}}">
 
-                   <h2>
+                   <h4>
 
                        {{this}}
-                   </h2>
+                   </h4>
                 </a>
             
             {{/each}}

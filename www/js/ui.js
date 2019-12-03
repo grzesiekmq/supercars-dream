@@ -50,21 +50,19 @@ Ui.prototype.loadModel = function (modelUrl, scriptName) {
 
 // turn test - has model materials?
 
-// Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "Model");
+// Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "TurnTest");
 
 
 
 
 
 
-// no materials ( to fixed)
+// no materials ( to fixed - to replace)
 
 // Ui.prototype.loadModel(`${carsPath}/4udi/a8.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/4udi/tt-clubsport.gltf`, "TurnTest");
 
 // Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, "TurnTest");
-
-// Ui.prototype.loadModel(`${carsPath}/aston/aston-rapide.gltf`, "TurnTest"); // to delete
 
 // Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, "TurnTest");
@@ -76,24 +74,56 @@ Ui.prototype.loadModel = function (modelUrl, scriptName) {
 // Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/maklaren/mp4-12c.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, "TurnTest");
+
 // Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, "TurnTest");
+
 // Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, "TurnTest");
+
 // Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, "TurnTest");
+
 // Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, "TurnTest");
 // Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, "TurnTest");
 
+
+
 // to fix
 
 // Ui.prototype.loadModel(`${carsPath}/bmv/m6.gltf`, "TurnTest"); // to fix
+
 // Ui.prototype.loadModel(`${carsPath}/ferari/430.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TurnTest"); // to fix
 // Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, "TurnTest");
+
+// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TurnTest"); // to fix
+
 // Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, "TurnTest"); // to fix
+
+
+
+//testing
+
+// Ui.prototype.loadModel(`${tracksPath}/testing/barcelona.gltf`);
+
+// Ui.prototype.loadModel(`${carsPath}/4udi/avus.gltf`, "TurnTest");
+
+// Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, "TurnTest");
+
+// Ui.prototype.loadModel(`${carsPath}/dodg/charger.gltf`, "TurnTest");
+
+// Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-wrc.gltf`, "TurnTest");
+
+
+
+// Ui.prototype.loadModel(`${carsPath}/lambo/reventon.gltf`, "TurnTest");
+
+
+
+
+
 
 const divApp = document.querySelector('#view');
 
@@ -150,10 +180,10 @@ function playClick() {
                     image: `${trackImages}Brands_Hatch.jpg`
                 },
 
-                {
+                /* {
                     name: 'Circuit de la Sarthe',
                     image: `${trackImages}Circuit_DeLa_Sarthe.jpg`
-                },
+                }, */
 
                 {
                     name: 'Hungaroring',
@@ -249,10 +279,16 @@ function playClick() {
 
         const tracksTpl = compiledTemplate(context);
 
-        console.log(context);
+
 
         // add tracks
+
+
         divApp.innerHTML = tracksTpl;
+        // HIDDEN TRACKS JUST FOR DEBUG!!!
+
+
+
 
         const tracks = document.querySelectorAll('.tracks .row .col-20');
         const tracksContainer = document.querySelector('.tracks');
@@ -340,7 +376,7 @@ function playClick() {
                     switch (makeName) {
                         case '4udi':
                             make = {
-                                model: ['a8', 'avus', 'r18', 'r8 fsi', 'rs7', 'rsq', 'tt clubsport']
+                                model: ['a8', 'avus', 'r18', 'r8 fsi', 'r8 le mans', 'rs7', 'rsq', 'tt clubsport']
                             };
 
                             break;
@@ -352,13 +388,13 @@ function playClick() {
 
                         case 'alfa':
                             make = {
-                                model: ['zagato tz3 stradale']
+                                model: ['8c spider', 'zagato tz3 stradale']
                             };
                             break;
 
                         case 'aston':
                             make = {
-                                model: ['aston rapide',
+                                model: [
                                     'DBR9',
                                     'dbs volante',
                                     'one 77',
@@ -377,7 +413,7 @@ function playClick() {
                             break;
                         case 'bmv':
                             make = {
-                                model: ['8 series concept',
+                                model: ['7', '8 series concept',
                                     'i8',
                                     'm3 e92',
                                     'M3 GTR',
@@ -543,6 +579,7 @@ function playClick() {
                             make = {
                                 model: ['370z',
                                     'gtr nizmo',
+                                    'R35 GTR',
                                     'skyline gtr']
                             };
 
@@ -645,7 +682,7 @@ function playClick() {
 
                 divApp.innerHTML = modelsTpl;
 
-                const models = document.querySelectorAll('.models .row .col-20');
+                const models = document.querySelectorAll('.models .row .col-100');
 
                 function getModel() {
 
@@ -665,6 +702,9 @@ function playClick() {
                         case 'r8 fsi':
                             Ui.prototype.loadModel(`${carsPath}/4udi/r8-fsi.gltf`, "TurnTest");
                             break;
+                        case 'r8 le mans':
+                            Ui.prototype.loadModel(`${carsPath}/4udi/r8-le-mans.gltf`, "TurnTest");
+                            break;
                         case 'rs7':
                             Ui.prototype.loadModel(`${carsPath}/4udi/rs7.gltf`, "TurnTest");
 
@@ -683,11 +723,19 @@ function playClick() {
                             Ui.prototype.loadModel(`${carsPath}/akura/nzx.gltf`, "TurnTest");
                             break;
 
-                            
-                        
-                            
+
+
+
                         case 'xrx':
                             Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, "TurnTest");
+                            break;
+                        // alfa
+
+                        case '8c spider':
+                            Ui.prototype.loadModel(`${carsPath}/alfa/8c-spider.gltf`, "TurnTest");
+                            break;
+                        case 'zagato tz3 stradale':
+                            Ui.prototype.loadModel(`${carsPath}/alfa/zagato-tz3-stradale.gltf`, "TurnTest");
                             break;
                         // aston
                         case 'DBR9':
@@ -726,6 +774,10 @@ function playClick() {
                             Ui.prototype.loadModel(`${carsPath}/bentle/continental-gt-supersports.gltf`, "TurnTest");
                             break;
                         // bmv
+
+                        case '7':
+                            Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, "TurnTest");
+                            break;
                         case 'm3':
                             Ui.prototype.loadModel(`${carsPath}/bmv/m3.gltf`, "TurnTest");
                             break;
@@ -805,6 +857,9 @@ function playClick() {
                         case 'f12':
                             Ui.prototype.loadModel(`${carsPath}/ferari/f12.gltf`, "TurnTest");
                             break;
+                        case 'la ferari':
+                            Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "TurnTest");
+                            break;
 
                         // fort
                         case 'gt 90':
@@ -881,6 +936,9 @@ function playClick() {
                         case 'agera':
                             Ui.prototype.loadModel(`${carsPath}/konigseg/agera.gltf`, "TurnTest");
 
+                            break;
+                        case 'ccx':
+                            Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, "TurnTest");
                             break;
                         // lambo
 
@@ -1028,6 +1086,9 @@ function playClick() {
                         case 'gtr nizmo':
                             Ui.prototype.loadModel(`${carsPath}/nisan/gtr-nizmo.gltf`, "TurnTest");
                             break;
+                        case 'R35 GTR':
+                            Ui.prototype.loadModel(`${carsPath}/nisan/R35-GTR.gltf`, "TurnTest");
+                            break;
                         // other
                         case 'exotic car':
                             Ui.prototype.loadModel(`${carsPath}/other/exotic-car.gltf`, "TurnTest");
@@ -1146,8 +1207,8 @@ function playClick() {
 
                     }
 
-                    divApp.innerHTML = `<p class="fg-cyan text-center">${modelName}</p>
-                            <button class="select-car tile-medium mx-auto my-4 p-1 text-center bg-dark border bd-cobalt outline ol-lightTeal fg-cyan">Select</button>`;
+                    divApp.innerHTML = `<h6 class="fg-cobalt text-center">${modelName}</h6>
+                            <button class="select-car tile-medium mx-auto my-4 p-1 text-center bg-cobalt border bd-cobalt outline ol-lightTeal fg-white">Select</button>`;
 
                     // for debugging
                     entity.addComponent("script");
