@@ -3,7 +3,6 @@ const carsPath = 'assets/models/cars';
 const tracksPath = 'assets/models/tracks';
 
 let modelEntity;
-// const baseUrl = 'https://grzesiekmq.github.io/supercars-dream/www/';
 
 entity.addComponent("script");
 entity.script.create(Ui);
@@ -31,7 +30,7 @@ Ui.prototype.loadModel = function (modelUrl, scriptName) {
             modelEntity.addComponent("model", options);
 
             console.log('model', modelEntity.model.entity);
-            // modelEntity.model.entity.rotate(0, 0, 0);
+
             modelEntity.addComponent("script");
             modelEntity.script.create(scriptName);
             app.root.addChild(modelEntity);
@@ -50,80 +49,64 @@ Ui.prototype.loadModel = function (modelUrl, scriptName) {
 
 // turn test - has model materials?
 
-// Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "TurnTest");
-
-
-
-
-
+// Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, turn);
 
 // no materials ( to fixed - to replace)
 
-// Ui.prototype.loadModel(`${carsPath}/adi/a8.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/adi/tt-clubsport.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/adi/a8.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/adi/tt-clubsport.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/bmv/vision-efficient.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/bmv/vision-efficient.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/hevrolet/corvete-concept.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/hevrolet/corvete-concept.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/maklaren/mp4-12c.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/maklaren/mp4-12c.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, "TurnTest");
-
-
+// Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, turn);
 
 // to fix
 
-// Ui.prototype.loadModel(`${carsPath}/bmv/m6.gltf`, "TurnTest"); // to fix
+// Ui.prototype.loadModel(`${carsPath}/bmv/m6.gltf`, turn); // to fix
 
-// Ui.prototype.loadModel(`${carsPath}/ferari/430.gltf`, "TurnTest");
-// Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/ferari/430.gltf`, turn);
+// Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TurnTest"); // to fix
+// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, turn); // to fix
 
-// Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, "TurnTest"); // to fix
-
-
+// Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, turn); // to fix
 
 //testing
 
 // Ui.prototype.loadModel(`${tracksPath}/testing/barcelona.gltf`);
 
-// Ui.prototype.loadModel(`${carsPath}/adi/avus.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/adi/avus.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/dodg/charger.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/dodg/charger.gltf`, turn);
 
-// Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-wrc.gltf`, "TurnTest");
+// Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-wrc.gltf`, turn);
 
-
-
-// Ui.prototype.loadModel(`${carsPath}/lambo/reventon.gltf`, "TurnTest");
-
-
-
-
-
+// Ui.prototype.loadModel(`${carsPath}/lambo/reventon.gltf`, turn);
 
 const divApp = document.querySelector('#view');
 
@@ -279,18 +262,11 @@ function playClick() {
 
         const tracksTpl = compiledTemplate(context);
 
-
-
         // add tracks
-
 
         divApp.innerHTML = tracksTpl;
         // HIDDEN TRACKS JUST FOR DEBUG!!!
 
-
-
-
-        const tracks = document.querySelectorAll('.tracks .row .col-20');
         const tracksContainer = document.querySelector('.tracks');
 
         function hideTracks() {
@@ -304,7 +280,10 @@ function playClick() {
             akura: ['nzx', 'xrx', 'NZX GT3']
         };
 
+        let makesTpl;
+
         function trackSelect() {
+            let makes;
             function showMakes() {
 
                 const tpl = loadTemplate('#template-makes', '#makes');
@@ -362,20 +341,21 @@ function playClick() {
                     ]
                 };
 
-                const makesTpl = compiledTemplate(context);
+                makesTpl = compiledTemplate(context);
 
                 divApp.innerHTML = makesTpl;
 
+                makes = document.querySelector('.cars .row');
+
             }
+            showMakes();
+
             function showModels() {
 
                 const tpl = loadTemplate('#template-models', '#models');
 
                 const template = $$(tpl).html();
                 const compiledTemplate = Template7.compile(template);
-
-
-
 
                 let makeName = (event.target).textContent.trim();
 
@@ -428,8 +408,8 @@ function playClick() {
                                     'M3 GTR',
                                     'm3',
                                     'm5 tuning',
-                                    'm6',
-                                    'vision efficient']
+                                    'm6'
+                                ]
                             };
 
                             break;
@@ -446,7 +426,7 @@ function playClick() {
 
                             break;
                         case 'citron':
-                            make = { model: ['gt'] };
+                            make = { model: ['citron gt'] };
 
                             break;
                         case 'dodg':
@@ -557,7 +537,7 @@ function playClick() {
                             break;
                         case 'mazerati':
                             make = {
-                                model: ['GT',
+                                model: ['G Turismo',
                                     'mc12',
                                     'quatroporte',
                                     'spyder']
@@ -684,7 +664,7 @@ function playClick() {
 
                             break;
                         case 'zubaru':
-                            make = { model: ['b11s', 'impreza wrx zti', 'impreza'] };
+                            make = { model: ['b11s', 'impreza'] };
 
                             break;
 
@@ -696,213 +676,703 @@ function playClick() {
 
                 const modelsTpl = compiledTemplate(make);
 
-
-
                 divApp.innerHTML = modelsTpl;
 
-                const models = document.querySelectorAll('.models .row .col-100');
+                const models = document.querySelector('.inline-list');
+
+                const back = document.querySelector('#back');
+
+                function goBack() {
+                    divApp.innerHTML = makesTpl;
+
+                    console.log(makes);
+
+                }
+                back.addEventListener('click', goBack);
 
                 function getModel() {
 
                     let modelName = (event.target).textContent.trim();
+
                     let acceleration, topSpeed;
+
+                    /* function findModelInArr()
+                    {
+                       return make.model.find(el => el === modelName);
+                    }
+                        
+                        console.log('found model',  findModelInArr()); 
+                    */
+
+                    // models arrays
+                    const adiArr = ['a8.gltf', 'avus.gltf', 'r18.gltf', 'r8-fsi.gltf', 'r8-le-mans.gltf', 'rs7.gltf', 'rsq.gltf', 'tt-clubsport.gltf'];
+                    const akuraArr = ['nzx.gltf', 'xrx.gltf', 'NZX_GT3.gltf'];
+                    const alfaArr = ['8c-spider.gltf', 'zagato-tz3-stradale.gltf'];
+                    const astonArr = [
+                        'DBR9.gltf',
+                        'dbs-volante.gltf',
+                        'one-77.gltf',
+                        'rapide.gltf',
+                        'v12-vanquish.gltf',
+                        'vanquish.gltf',
+                        'vantage.gltf',
+                        'vulcan.gltf'
+
+                    ];
+                    const bentleArr = ['continental-gt-supersports.gltf'];
+                    const bmvArr = ['7.gltf',
+                        '8-series-concept.gltf',
+                        'i8.gltf',
+                        'm3-e92.gltf',
+                        'M3-GTR.gltf',
+                        'm3.gltf',
+                        'm5-tuning.gltf',
+                        'm6.gltf'
+                    ];
+
+                    const bugatiArr = ['chiron.gltf', 'veyron.gltf'];
+                    const cadilacArr = ['cien.gltf', 'cts.gltf'];
+                    const chondaArr = ['NZX-TAKATA-DOME.gltf', 's2000-tuned.gltf'];
+                    const citronArr = ['citron-gt.gltf'];
+                    const dodgArr = ['charger.gltf', 'viper-gts.gltf',
+                        'viper-zrt.gltf',
+                        'viper.gltf',
+                        'zrt-challenger.gltf'];
+                    const ferariArr = ['430.gltf',
+                        '458-italia.gltf',
+                        '599.gltf',
+                        '812-superfast.gltf',
+                        'f12.gltf',
+                        'la-ferari.gltf',
+                        'modena.gltf',
+                        'testarosa.gltf'];
+                    const fortArr = ['gt-90.gltf',
+                        'fort-gt.gltf',
+                        'mustang-salen.gltf',
+                        'mustang.gltf'];
+                    const heneseyArr = ['venom-gt.gltf'];
+                    const hevroletArr = ['camaro-old.gltf',
+                        'camaro.gltf',
+                        'corvete-concept.gltf',
+                        'corvette-C7.gltf'];
+                    const holdemArr = ['monaro.gltf'];
+                    const hryslerArr = ['300c.gltf', 'crossfire.gltf', 'ME.gltf'];
+                    const jagurArr = ['cx-75.gltf', 'f-type.gltf', 'xkr.gltf'];
+                    const konigsegArr = ['agera.gltf', 'ccx.gltf', 'one1.gltf'];
+                    const lamboArr = ['asterion.gltf',
+                        'aventador.gltf',
+                        'diablo-sv.gltf',
+                        'gallardo.gltf',
+                        'huracan.gltf',
+                        'murcielago.gltf',
+                        'reventon.gltf',
+                        'urus.gltf',
+                        'veneno.gltf'];
+                    const lotuzArr = ['evora.gltf', 'exige-s.gltf'];
+                    const luxusArr = ['gs.gltf', 'lfa.gltf'];
+                    const maklarenArr = ['576-gt.gltf',
+                        'f1.gltf',
+                        'maklaren-GT.gltf',
+                        'mp4-12c.gltf',
+                        'mp4.gltf',
+                        'p1.gltf'];
+                    const masdaArr = ['MX-5.gltf',
+                        'mx5-2016.gltf',
+                        'RX-7.gltf',
+                        'RX-8.gltf'];
+                    const maybahArr = ['exelero.gltf'];
+                    const mazeratiArr = ['G-Turismo.gltf',
+                        'mc12.gltf',
+                        'quatroporte.gltf',
+                        'spyder.gltf'];
+                    const mercArr = ['amge-gts.gltf',
+                        'cl.gltf',
+                        'clk-dtm.gltf',
+                        'clk-gtr.gltf',
+                        'slr-maklaren.gltf',
+                        'sls-amge.gltf',
+                        'sls.gltf'];
+
+                    const mitsushiArr = ['3000gt.gltf',
+                        'eclipse.gltf',
+                        'lancer-evolution-x.gltf'
+                    ];
+
+                    const nisanArr = ['370z.gltf',
+                        'gtr-nizmo.gltf',
+                        'R35-GTR.gltf',
+                        'skyline-gtr.gltf'];
+
+                    const oplArr = ['speedster.gltf'];
+                    const otherArr = ['asterisk.gltf',
+                        'concept-car-2009.gltf',
+                        'concept-car-7.gltf',
+                        'concept-car5.gltf',
+                        'exotic-car.gltf',
+                        'race-car.gltf',
+                        'vm-x1.gltf',
+                        'wizard-gt.gltf'];
+                    const pahaniArr = ['huayra.gltf',
+                        'zonda-f.gltf'
+                    ];
+                    const pontiakArr = ['firebird.gltf', 'gto.gltf'];
+                    const porsheArr = ['911-turbo.gltf',
+                        '918-r-type.gltf',
+                        '996.gltf',
+                        '997-gt3.gltf',
+                        'boxster-s.gltf',
+                        'boxster.gltf',
+                        'carrera-gt.gltf',
+                        'cayman-2017.gltf',
+                        'panamera-turbo.gltf'];
+                    const rols_roysArr = ['phantom.gltf'];
+                    const rufeArr = ['rt-12s.gltf'];
+                    const sabArr = ['aero-x.gltf'];
+                    const salenArr = ['s7.gltf'];
+                    const shelbiArr = ['cobra.gltf'];
+                    const tezlaArr = ['model-s.gltf'];
+                    const tojotaArr = ['soarer.gltf'];
+                    const twrArr = ['sagaris.gltf'];
+                    const vendetaArr = ['gtr-800.gltf'];
+                    const vwArr = ['ego.gltf'];
+                    const zenwoArr = ['st1.gltf'];
+                    const zubaruArr = ['b11s.gltf', 'impreza.gltf'];
+
+                    // makes objects
+
+                    const adi = {
+                        a8: adiArr[0],
+                        avus: adiArr[1],
+                        r18: adiArr[2],
+                        r8_fsi: adiArr[3],
+                        r8_le_mans: adiArr[4],
+                        rs7: adiArr[5],
+                        rsq: adiArr[6],
+                        tt: adiArr[7]
+
+                    };
+
+                    const akura = {
+                        nzx: akuraArr[0],
+                        xrx: akuraArr[1],
+                        nzx_GT3: akuraArr[2]
+                    };
+
+                    const alfa = {
+                        alfa_8c: alfaArr[0],
+                        tz3: alfaArr[1]
+
+                    };
+
+                    const aston = {
+                        dbr9: astonArr[0],
+                        dbs: astonArr[1],
+                        one77: astonArr[2],
+                        rapide: astonArr[3],
+                        v12_vanquish: astonArr[4],
+                        vanquish: astonArr[5],
+                        vantage: astonArr[6],
+                        vulcan: astonArr[7]
+                    };
+
+                    const bentle = {
+                        continental: bentleArr[0]
+                    };
+                    const bmv = {
+                        bmv_7: bmvArr[0],
+                        bmv_8_series: bmvArr[1],
+                        i8: bmvArr[2],
+                        m3_e92: bmvArr[3],
+                        m3_gtr: bmvArr[4],
+                        m3: bmvArr[5],
+                        m5: bmvArr[6],
+                        m6: bmvArr[7]
+                    };
+
+                    const bugati = {
+                        chiron: bugatiArr[0],
+                        veyron: bugatiArr[1]
+                    };
+
+                    const cadilac = {
+                        cien: cadilacArr[0],
+                        cts: cadilacArr[1]
+                    };
+
+                    const chonda = {
+                        nzx: chondaArr[0],
+                        s2000: chondaArr[1]
+                    };
+
+                    const citron = {
+                        gt: citronArr[0]
+                    };
+                    const dodg = {
+                        charger: dodgArr[0],
+                        viper_gts: dodgArr[1],
+                        viper_zrt: dodgArr[2],
+                        viper: dodgArr[3],
+                        challenger: dodgArr[4]
+                    };
+
+                    const ferari = {
+                        f430: ferariArr[0],
+                        f458: ferariArr[1],
+                        f599: ferariArr[2],
+                        f812: ferariArr[3],
+                        f12: ferariArr[4],
+                        laferari: ferariArr[5],
+                        modena: ferariArr[6],
+                        testarosa: ferariArr[7]
+                    };
+
+                    const fort = {
+                        gt90: fortArr[0],
+                        gt: fortArr[1],
+                        mustang_salen: fortArr[2],
+                        mustang: fortArr[3]
+                    };
+
+                    const henesey = {
+                        venom: heneseyArr[0]
+                    };
+
+                    const hevrolet = {
+                        camaro_old: hevroletArr[0],
+                        camaro: hevroletArr[1],
+                        corvete_concept: hevroletArr[2],
+                        corvete_c7: hevroletArr[3]
+                    };
+
+                    const holdem = {
+                        monaro: holdemArr[0]
+                    };
+
+                    const hrysler = {
+                        hrysler_300c: hryslerArr[0],
+                        crossfire: hryslerArr[1],
+                        me: hryslerArr[2]
+                    };
+
+                    const jagur = {
+                        cx75: jagurArr[0],
+                        f_type: jagurArr[1],
+                        xkr: jagurArr[2]
+                    };
+
+                    const konigseg = {
+                        agera: konigsegArr[0],
+                        ccx: konigsegArr[1],
+                        one1: konigsegArr[2]
+                    };
+
+                    const lambo = {
+                        asterion: lamboArr[0],
+                        aventador: lamboArr[1],
+                        diablo: lamboArr[2],
+                        gallardo: lamboArr[3],
+                        huracan: lamboArr[4],
+                        murcielago: lamboArr[5],
+                        reventon: lamboArr[6],
+                        urus: lamboArr[7],
+                        veneno: lamboArr[8]
+                    };
+
+                    const lotuz = {
+                        evora: lotuzArr[0],
+                        exige: lotuzArr[1]
+                    };
+
+                    const luxus = {
+                        gs: luxusArr[0],
+                        lfa: luxusArr[1]
+                    };
+
+                    const maklaren = {
+                        maklaren_576: maklarenArr[0],
+                        f1: maklarenArr[1],
+                        gt: maklarenArr[2],
+                        mp4_12c: maklarenArr[3],
+                        mp4: maklarenArr[4],
+                        p1: maklarenArr[5]
+                    };
+
+                    const masda = {
+                        mx5: masdaArr[0],
+                        mx5_2016: masdaArr[1],
+                        rx7: masdaArr[2],
+                        rx8: masdaArr[3]
+                    };
+
+                    const maybah = {
+                        exelero: maybahArr[0]
+                    };
+
+                    const mazerati = {
+                        gt: mazeratiArr[0],
+                        mc12: mazeratiArr[1],
+                        quatroporte: mazeratiArr[2],
+                        spyder: mazeratiArr[3]
+                    };
+
+                    const merc = {
+                        amge: mercArr[0],
+                        cl: mercArr[1],
+                        clk_dtm: mercArr[2],
+                        clk_gtr: mercArr[3],
+                        slr: mercArr[4],
+                        sls_amge: mercArr[5],
+                        sls: mercArr[6]
+                    };
+
+                    const mitsushi = {
+                        mitsushi_3000gt: mitsushiArr[0],
+                        eclipse: mitsushiArr[1],
+                        lancer: mitsushiArr[2]
+                    };
+
+                    const nisan = {
+                        nisan_370z: nisanArr[0],
+                        gtr_nizmo: nisanArr[1],
+                        r35: nisanArr[2],
+                        skyline: nisanArr[3]
+                    };
+
+                    const opl = {
+                        speedster: oplArr[0]
+                    };
+
+                    const other = {
+                        asterisk: otherArr[0],
+                        concept_2009: otherArr[1],
+                        concept_7: otherArr[2],
+                        concept_5: otherArr[3],
+                        exotic: otherArr[4],
+                        race_car: otherArr[5],
+                        vm: otherArr[6],
+                        wizard: otherArr[7]
+                    };
+
+                    const pahani = {
+                        huayra: pahaniArr[0],
+                        zonda: pahaniArr[1]
+                    };
+
+                    const pontiak = {
+                        firebird: pontiakArr[0],
+                        gto: pontiakArr[1]
+                    };
+
+                    const porshe = {
+                        porshe_911: porsheArr[0],
+                        porshe_918: porsheArr[1],
+                        porshe_996: porsheArr[2],
+                        porshe_997: porsheArr[3],
+                        boxster_s: porsheArr[4],
+                        boxster: porsheArr[5],
+                        carrera: porsheArr[6],
+                        cayman: porsheArr[7],
+                        panamera: porsheArr[8]
+                    };
+
+                    const rols_roys = {
+                        phantom: rols_roysArr[0]
+                    };
+
+                    const rufe = {
+                        rt_12s: rufeArr[0]
+                    };
+
+                    const sab = {
+                        aero: sabArr[0]
+                    };
+
+                    const salen = {
+                        s7: salenArr[0]
+                    };
+
+                    const shelbi = {
+                        cobra: shelbiArr[0]
+                    };
+
+                    const tezla = {
+                        model_s: tezlaArr[0]
+                    };
+
+                    const tojota = {
+                        soarer: tojotaArr[0]
+                    };
+                    const twr = {
+                        sagaris: twrArr[0]
+                    };
+
+                    const vendeta = {
+                        gtr_800: vendetaArr[0]
+                    };
+
+                    const vw = {
+                        ego: vwArr[0]
+                    };
+
+                    const zenwo = {
+                        st1: zenwoArr[0]
+                    };
+
+                    const zubaru = {
+                        b11s: zubaruArr[0],
+                        impreza: zubaruArr[1]
+                    };
+
+                    function hideModel() {
+                        modelEntity.model.hide();
+                    }
+                    function showModel() {
+                        modelEntity.model.show();
+                    }
+
+                    function hideOtherModel(name, makesArr) {
+                        if (makesArr.filter(el => el !== name)
+                            .some(el => app.assets.find(el))) {
+                            hideModel();
+                        }
+                    }
+
+                    const turn = "Turn";
 
                     switch (modelName) {
                         // adi
                         case 'a8':
-                            Ui.prototype.loadModel(`${carsPath}/adi/a8.gltf`, "TurnTest");
+                            // if model is in assets except of selected model
+                            hideOtherModel(adi.a8, adiArr);
+
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.a8}`, turn);
+                            if (app.assets.find(adi.a8)) {
+                                // app.assets.get
+                            }
                             acceleration = 4.9;
                             topSpeed = 250;
                             break;
                         case 'avus':
-                            Ui.prototype.loadModel(`${carsPath}/adi/avus.gltf`, "TurnTest");
+                            hideOtherModel(adi.avus, adiArr);
+
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.avus}`, turn);
                             acceleration = 2.8;
                             topSpeed = 340;
                             break;
                         case 'r18':
-                            Ui.prototype.loadModel(`${carsPath}/adi/r18.gltf`, "TurnTest");
+                            hideOtherModel(adi.r18, adiArr);
+
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.r18}`, turn);
                             acceleration = 2.6;
                             topSpeed = 378;
                             break;
                         case 'r8 fsi':
-                            Ui.prototype.loadModel(`${carsPath}/adi/r8-fsi.gltf`, "TurnTest");
+                            hideOtherModel(adi.r8_fsi, adiArr);
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.r8_fsi}`, turn);
                             acceleration = 3.5;
                             topSpeed = 317;
                             break;
                         case 'r8 le mans':
-                            Ui.prototype.loadModel(`${carsPath}/adi/r8-le-mans.gltf`, "TurnTest");
+                            hideOtherModel(adi.r8_le_mans, adiArr);
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.r8_le_mans}`, turn);
                             acceleration = 3.5;
                             topSpeed = 317;
                             break;
                         case 'rs7':
-                            Ui.prototype.loadModel(`${carsPath}/adi/rs7.gltf`, "TurnTest");
+                            hideOtherModel(adi.rs7, adiArr);
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.rs7}`, turn);
                             acceleration = 3.9;
                             topSpeed = 250;
 
                             break;
                         case 'rsq':
-                            Ui.prototype.loadModel(`${carsPath}/adi/rsq.gltf`, "TurnTest");
+                            hideOtherModel(adi.rsq, adiArr);
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.rsq}`, turn);
                             acceleration = 4.1;
                             topSpeed = 337;
                             break;
                         case 'tt clubsport':
-                            Ui.prototype.loadModel(`${carsPath}/adi/tt-clubsport.gltf`, "TurnTest");
+                            hideOtherModel(adi.tt, adiArr);
+                            Ui.prototype.loadModel(`${carsPath}/adi/${adi.tt}`, turn);
                             acceleration = 4;
                             topSpeed = 249;
                             break;
 
                         // akura
                         case 'nzx':
-                            Ui.prototype.loadModel(`${carsPath}/akura/nzx.gltf`, "TurnTest");
+                            hideOtherModel(akura.nzx, akuraArr);
+                            Ui.prototype.loadModel(`${carsPath}/akura/${akura.nzx}`, turn);
                             acceleration = 4.9;
                             topSpeed = 280;
                             break;
 
-
-
-
                         case 'xrx':
-                            Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, "TurnTest");
+                            hideOtherModel(akura.xrx, akuraArr);
+                            Ui.prototype.loadModel(`${carsPath}/akura/${akura.xrx}`, turn);
                             acceleration = 3.2;
                             topSpeed = 346;
                             break;
                         // alfa
 
                         case '8c spider':
-                            Ui.prototype.loadModel(`${carsPath}/alfa/8c-spider.gltf`, "TurnTest");
+                            hideOtherModel(alfa.alfa_8c, alfaArr);
+                            Ui.prototype.loadModel(`${carsPath}/alfa/${alfa.alfa_8c}`, turn);
                             acceleration = 4.2;
                             topSpeed = 292;
                             break;
                         case 'zagato tz3 stradale':
-                            Ui.prototype.loadModel(`${carsPath}/alfa/zagato-tz3-stradale.gltf`, "TurnTest");
+                            hideOtherModel(alfa.tz3, alfaArr);
+                            Ui.prototype.loadModel(`${carsPath}/alfa/${alfa.tz3}`, turn);
                             acceleration = 3.6;
                             topSpeed = 325;
                             break;
                         // aston
                         case 'DBR9':
-                            Ui.prototype.loadModel(`${carsPath}/aston/DBR9.gltf`, "TurnTest");
+                            hideOtherModel(aston.dbr9, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/DBR9.gltf`, turn);
                             acceleration = 4.5;
                             topSpeed = 294;
                             break;
                         case 'rapide':
-                            Ui.prototype.loadModel(`${carsPath}/aston/rapide.gltf`, "TurnTest");
+                            hideOtherModel(aston.rapide, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/rapide.gltf`, turn);
                             acceleration = 4.8;
                             topSpeed = 295;
                             break;
                         case 'vantage':
-                            Ui.prototype.loadModel(`${carsPath}/aston/vantage.gltf`, "TurnTest");
+                            hideOtherModel(aston.vantage, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/vantage.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 329;
                             break;
                         case 'dbs volante':
-                            Ui.prototype.loadModel(`${carsPath}/aston/dbs-volante.gltf`, "TurnTest");
+                            hideOtherModel(aston.dbs, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/dbs-volante.gltf`, turn);
                             acceleration = 4.3;
                             topSpeed = 308;
                             break;
                         case 'vanquish':
-                            Ui.prototype.loadModel(`${carsPath}/aston/vanquish.gltf`, "TurnTest");
+                            hideOtherModel(aston.vanquish, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/vanquish.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 294;
                             break;
                         case 'one 77':
-                            Ui.prototype.loadModel(`${carsPath}/aston/one-77.gltf`, "TurnTest");
+                            hideOtherModel(aston.one77, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/one-77.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 354;
                             break;
                         case 'v12 vanquish':
-                            Ui.prototype.loadModel(`${carsPath}/aston/v12-vanquish.gltf`, "TurnTest");
+                            hideOtherModel(aston.v12_vanquish, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/v12-vanquish.gltf`, turn);
                             acceleration = 3.4;
                             topSpeed = 329;
                             break;
                         case 'vulcan':
-                            Ui.prototype.loadModel(`${carsPath}/aston/vulcan.gltf`, "TurnTest");
+                            hideOtherModel(aston.vulcan, astonArr);
+                            Ui.prototype.loadModel(`${carsPath}/aston/vulcan.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 345;
                             break;
 
                         // bentle
                         case 'continental gt supersports':
-                            Ui.prototype.loadModel(`${carsPath}/bentle/continental-gt-supersports.gltf`, "TurnTest");
+                            hideOtherModel(bentle.continental, bentleArr);
+                            Ui.prototype.loadModel(`${carsPath}/bentle/continental-gt-supersports.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 328;
                             break;
                         // bmv
 
                         case '7':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, "TurnTest");
+                            hideOtherModel(bmv.bmv_7, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/7.gltf`, turn);
                             acceleration = 7.8;
                             topSpeed = 244;
                             break;
                         case 'm3':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/m3.gltf`, "TurnTest");
+                            hideOtherModel(bmv.m3, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/m3.gltf`, turn);
                             acceleration = 4.5;
                             topSpeed = 249;
                             break;
                         case 'm3 e92':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, "TurnTest");
+                            hideOtherModel(bmv.m3_e92, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, turn);
                             acceleration = 4.1;
                             topSpeed = 289;
                             break;
                         case 'M3 GTR':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/M3-GTR.gltf`, "TurnTest");
+                            hideOtherModel(bmv.m3_gtr, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/M3-GTR.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 322;
                             break;
                         case 'm5 tuning':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, "TurnTest");
+                            hideOtherModel(bmv.m5, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, turn);
                             acceleration = 5.1;
                             topSpeed = 250;
                             break;
                         case '8 series concept':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/8-series-concept.gltf`, "TurnTest");
+                            hideOtherModel(bmv.bmv_8_series, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/8-series-concept.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 250;
                             break;
 
                         case 'i8':
-                            Ui.prototype.loadModel(`${carsPath}/bmv/i8.gltf`, "TurnTest");
+                            hideOtherModel(bmv.i8, bmvArr);
+                            Ui.prototype.loadModel(`${carsPath}/bmv/i8.gltf`, turn);
                             acceleration = 4.1;
                             topSpeed = 250;
                             break;
 
-
                         //  bugati
                         case 'chiron':
-                            Ui.prototype.loadModel(`${carsPath}/bugati/chiron.gltf`, "TurnTest");
+                            hideOtherModel(bugati.chiron, bugatiArr);
+                            Ui.prototype.loadModel(`${carsPath}/bugati/chiron.gltf`, turn);
                             acceleration = 2.4;
                             topSpeed = 420;
                             break;
                         case 'veyron':
-                            Ui.prototype.loadModel(`${carsPath}/bugati/veyron.gltf`, "TurnTest");
+                            hideOtherModel(bugati.veyron, bugatiArr);
+                            Ui.prototype.loadModel(`${carsPath}/bugati/veyron.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 407;
                             break;
                         // cadilac
                         case 'cien':
-                            Ui.prototype.loadModel(`${carsPath}/cadilac/cien.gltf`, "TurnTest");
+                            hideOtherModel(cadilac.cien, cadilacArr);
+                            Ui.prototype.loadModel(`${carsPath}/cadilac/cien.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 370;
                             break;
                         case 'cts':
-                            Ui.prototype.loadModel(`${carsPath}/cadilac/cts.gltf`, "TurnTest");
+                            hideOtherModel(cadilac.cts, cadilacArr);
+                            Ui.prototype.loadModel(`${carsPath}/cadilac/cts.gltf`, turn);
                             acceleration = 4.2;
                             topSpeed = 308;
                             break;
 
                         // chonda
                         case 's2000 tuned':
-                            Ui.prototype.loadModel(`${carsPath}/chonda/s2000-tuned.gltf`, "TurnTest");
+                            hideOtherModel(chonda.s2000, chondaArr);
+                            Ui.prototype.loadModel(`${carsPath}/chonda/s2000-tuned.gltf`, turn);
                             acceleration = 5.8;
                             topSpeed = 239;
                             break;
                         case 'NZX TAKATA DOME':
-                            Ui.prototype.loadModel(`${carsPath}/chonda/NZX TAKATA DOME.gltf`, "TurnTest");
+                            hideOtherModel(chonda.nzx, chondaArr);
+                            Ui.prototype.loadModel(`${carsPath}/chonda/NZX TAKATA DOME.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 270;
                             break;
                         // citron
-                        case 'gt':
-                            Ui.prototype.loadModel(`${carsPath}/citron/gt.gltf`, "TurnTest");
+                        case 'citron gt':
+                            hideOtherModel(citron.gt, citronArr);
+                            Ui.prototype.loadModel(`${carsPath}/citron/citron-gt.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 289;
                             break;
@@ -910,29 +1380,33 @@ function playClick() {
                         // dodg
 
                         case 'charger':
-                            Ui.prototype.loadModel(`${carsPath}/dodg/charger.gltf`, "TurnTest");
+                            hideOtherModel(dodg.charger, dodgArr);
+                            Ui.prototype.loadModel(`${carsPath}/dodg/charger.gltf`, turn);
                             acceleration = 4.8;
                             topSpeed = 267;
                             break;
                         case 'viper':
-
-                            Ui.prototype.loadModel(`${carsPath}/dodg/viper.gltf`, "TurnTest");
+                            hideOtherModel(dodg.viper, dodgArr);
+                            Ui.prototype.loadModel(`${carsPath}/dodg/viper.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 330;
                             break;
                         case 'viper zrt':
-                            Ui.prototype.loadModel(`${carsPath}/dodg/viper-zrt.gltf`, "TurnTest");
+                            hideOtherModel(dodg.viper_zrt, dodgArr);
+                            Ui.prototype.loadModel(`${carsPath}/dodg/viper-zrt.gltf`, turn);
                             acceleration = 3.6;
                             topSpeed = 329;
                             break;
                         case 'viper gts':
-                            Ui.prototype.loadModel(`${carsPath}/dodg/viper-gts.gltf`, "TurnTest");
+                            hideOtherModel(dodg.viper_gts, dodgArr);
+                            Ui.prototype.loadModel(`${carsPath}/dodg/viper-gts.gltf`, turn);
                             acceleration = 4.3;
                             topSpeed = 284;
                             break;
 
                         case 'zrt challenger':
-                            Ui.prototype.loadModel(`${carsPath}/dodg/zrt-challenger.gltf`, "TurnTest");
+                            hideOtherModel(dodg.challenger, dodgArr);
+                            Ui.prototype.loadModel(`${carsPath}/dodg/zrt-challenger.gltf`, turn);
                             acceleration = 5;
                             topSpeed = 273;
                             break;
@@ -940,117 +1414,137 @@ function playClick() {
                         // ferari
 
                         case '599':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/599.gltf`, "TurnTest");
+                            hideOtherModel(ferari.f599, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/599.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 334;
                             break;
                         case 'modena':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/modena.gltf`, "TurnTest");
+                            hideOtherModel(ferari.modena, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/modena.gltf`, turn);
                             acceleration = 4.3;
                             topSpeed = 296;
                             break;
                         case '458 italia':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, "TurnTest");
+                            hideOtherModel(ferari.f458, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, turn);
                             acceleration = 3.4;
                             topSpeed = 325;
                             break;
                         case 'testarosa':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/testarosa.gltf`, "TurnTest");
+                            hideOtherModel(ferari.testarosa, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/testarosa.gltf`, turn);
                             acceleration = 5;
                             topSpeed = 289;
                             break;
 
                         case '812 superfast':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/812-superfast.gltf`, "TurnTest");
+                            hideOtherModel(ferari.f812, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/812-superfast.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 355;
                             break;
                         case 'f12':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/f12.gltf`, "TurnTest");
+                            hideOtherModel(ferari.f12, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/f12.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 339;
                             break;
                         case 'la ferari':
-                            Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "TurnTest");
+                            hideOtherModel(ferari.laferari, ferariArr);
+                            Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 349;
                             break;
 
                         // fort
                         case 'gt 90':
-                            Ui.prototype.loadModel(`${carsPath}/fort/gt-90.gltf`, "TurnTest");
+                            hideOtherModel(fort.gt90, fortArr);
+                            Ui.prototype.loadModel(`${carsPath}/fort/gt-90.gltf`, turn);
                             acceleration = 3.1;
                             topSpeed = 378;
                             break;
                         case 'mustang salen':
-                            Ui.prototype.loadModel(`${carsPath}/fort/mustang-salen.gltf`, "TurnTest");
+                            hideOtherModel(fort.mustang_salen, fortArr);
+                            Ui.prototype.loadModel(`${carsPath}/fort/mustang-salen.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 289;
                             break;
 
                         case 'gt':
-                            Ui.prototype.loadModel(`${carsPath}/fort/gt.gltf`, "TurnTest");
+                            hideOtherModel(fort.gt, fortArr);
+                            Ui.prototype.loadModel(`${carsPath}/fort/fort-gt.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 347;
                             break;
                         case 'mustang':
-                            Ui.prototype.loadModel(`${carsPath}/fort/mustang.gltf`, "TurnTest");
+                            hideOtherModel(fort.mustang, fortArr);
+                            Ui.prototype.loadModel(`${carsPath}/fort/mustang.gltf`, turn);
                             acceleration = 4.5;
                             topSpeed = 263;
                             break;
 
                         // henesey
                         case 'venom gt':
-                            Ui.prototype.loadModel(`${carsPath}/henesey/venom-gt.gltf`, "TurnTest");
+                            hideOtherModel(henesey.venom, heneseyArr);
+                            Ui.prototype.loadModel(`${carsPath}/henesey/venom-gt.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 434;
                             break;
 
                         // hevrolet
                         case 'camaro old':
-                            Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro-old.gltf`, "TurnTest");
+                            hideOtherModel(hevrolet.camaro_old, hevroletArr);
+                            Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro-old.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 305;
                             break;
 
                         case 'camaro':
-                            Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro.gltf`, "TurnTest");
+                            hideOtherModel(hevrolet.camaro, hevroletArr);
+                            Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 289;
                             break;
                         case 'corvette C7':
-                            Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-C7.gltf`, "TurnTest");
+                            hideOtherModel(hevrolet.corvete_c7, hevroletArr);
+                            Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-C7.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 321;
                             break;
                         case 'corvette concept':
-                            Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-concept.gltf`, "TurnTest");
+                            hideOtherModel(hevrolet.corvete_concept, hevroletArr);
+                            Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-concept.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 300;
                             break;
 
                         // holdem
                         case 'monaro':
-                            Ui.prototype.loadModel(`${carsPath}/holdem/monaro.gltf`, "TurnTest");
+                            hideOtherModel(holdem.monaro, holdemArr);
+                            Ui.prototype.loadModel(`${carsPath}/holdem/monaro.gltf`, turn);
                             acceleration = 6;
                             topSpeed = 278;
                             break;
 
                         // hrysler
                         case '300c':
-                            Ui.prototype.loadModel(`${carsPath}/hrysler/300c.gltf`, "TurnTest");
+                            hideOtherModel(hrysler.hrysler_300c, hryslerArr);
+                            Ui.prototype.loadModel(`${carsPath}/hrysler/300c.gltf`, turn);
                             acceleration = 6.2;
                             topSpeed = 240;
                             break;
 
                         case 'crossfire':
-                            Ui.prototype.loadModel(`${carsPath}/hrysler/crossfire.gltf`, "TurnTest");
+                            hideOtherModel(hrysler.crossfire, hryslerArr);
+                            Ui.prototype.loadModel(`${carsPath}/hrysler/crossfire.gltf`, turn);
                             acceleration = 6.5;
                             topSpeed = 244;
                             break;
 
                         case 'ME':
-                            Ui.prototype.loadModel(`${carsPath}/hrysler/ME.gltf`, "TurnTest");
+                            hideOtherModel(hrysler.me, hryslerArr);
+                            Ui.prototype.loadModel(`${carsPath}/hrysler/ME.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 399;
                             break;
@@ -1058,17 +1552,20 @@ function playClick() {
                         // jagur
 
                         case 'c-x75':
-                            Ui.prototype.loadModel(`${carsPath}/jagur/cx-75.gltf`, "TurnTest");
+                            hideOtherModel(jagur.cx75, jagurArr);
+                            Ui.prototype.loadModel(`${carsPath}/jagur/cx-75.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 354;
                             break;
                         case 'f type':
-                            Ui.prototype.loadModel(`${carsPath}/jagur/f-type.gltf`, "TurnTest");
+                            hideOtherModel(jagur.f_type, jagurArr);
+                            Ui.prototype.loadModel(`${carsPath}/jagur/f-type.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 321;
                             break;
                         case 'xkr':
-                            Ui.prototype.loadModel(`${carsPath}/jagur/xkr.gltf`, "TurnTest");
+                            hideOtherModel(jagur.xkr, jagurArr);
+                            Ui.prototype.loadModel(`${carsPath}/jagur/xkr.gltf`, turn);
                             acceleration = 4.9;
                             topSpeed = 280;
                             break;
@@ -1076,67 +1573,79 @@ function playClick() {
                         // konigseg
 
                         case 'one1':
-                            Ui.prototype.loadModel(`${carsPath}/konigseg/one1.gltf`, "TurnTest");
+                            hideOtherModel(konigseg.one1, konigsegArr);
+                            Ui.prototype.loadModel(`${carsPath}/konigseg/one1.gltf`, turn);
                             acceleration = 2.5;
                             topSpeed = 439;
                             break;
 
                         case 'agera':
-                            Ui.prototype.loadModel(`${carsPath}/konigseg/agera.gltf`, "TurnTest");
+                            hideOtherModel(konigseg.agera, konigsegArr);
+                            Ui.prototype.loadModel(`${carsPath}/konigseg/agera.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 432;
                             break;
                         case 'ccx':
-                            Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, "TurnTest");
+                            hideOtherModel(konigseg.ccx, konigsegArr);
+                            Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 402;
                             break;
                         // lambo
 
                         case 'huracan':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/huracan.gltf`, "TurnTest");
+                            hideOtherModel(lambo.huracan, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/huracan.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 325;
                             break;
                         case 'diablo sv':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/diablo-sv.gltf`, "TurnTest");
+                            hideOtherModel(lambo.diablo, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/diablo-sv.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 328;
                             break;
                         case 'gallardo':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/gallardo.gltf`, "TurnTest");
+                            hideOtherModel(lambo.gallardo, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/gallardo.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 325;
                             break;
                         case 'urus':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/urus.gltf`, "TurnTest");
+                            hideOtherModel(lambo.urus, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/urus.gltf`, turn);
                             acceleration = 3.6;
                             topSpeed = 305;
                             break;
 
                         case 'reventon':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/reventon.gltf`, "TurnTest");
+                            hideOtherModel(lambo.reventon, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/reventon.gltf`, turn);
                             acceleration = 3.4;
                             topSpeed = 346;
                             break;
                         case 'murcielago':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TurnTest");
+                            hideOtherModel(lambo.murcielago, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 355;
                             break;
 
                         case 'veneno':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/veneno.gltf`, "TurnTest");
+                            hideOtherModel(lambo.veneno, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/veneno.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 354;
                             break;
                         case 'aventador':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/aventador.gltf`, "TurnTest");
+                            hideOtherModel(lambo.aventador, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/aventador.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 349;
                             break;
                         case 'asterion':
-                            Ui.prototype.loadModel(`${carsPath}/lambo/asterion.gltf`, "TurnTest");
+                            hideOtherModel(lambo.asterion, lamboArr);
+                            Ui.prototype.loadModel(`${carsPath}/lambo/asterion.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 320;
                             break;
@@ -1144,76 +1653,89 @@ function playClick() {
                         // lotuz
 
                         case 'evora':
-                            Ui.prototype.loadModel(`${carsPath}/lotuz/evora.gltf`, "TurnTest");
+                            hideOtherModel(lotuz.evora, lotuzArr);
+                            Ui.prototype.loadModel(`${carsPath}/lotuz/evora.gltf`, turn);
                             acceleration = 4.1;
                             topSpeed = 299;
                             break;
                         case 'exige s':
-                            Ui.prototype.loadModel(`${carsPath}/lotuz/exige-s.gltf`, "TurnTest");
+                            hideOtherModel(lotuz.exige, lotuzArr);
+                            Ui.prototype.loadModel(`${carsPath}/lotuz/exige-s.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 273;
                             break;
                         //  luxus
                         case 'gs':
-                            Ui.prototype.loadModel(`${carsPath}/luxus/gs.gltf`, "TurnTest");
+                            hideOtherModel(luxus.gs, luxusArr);
+                            Ui.prototype.loadModel(`${carsPath}/luxus/gs.gltf`, turn);
                             acceleration = 6;
                             topSpeed = 250;
                             break;
                         case 'lfa':
-                            Ui.prototype.loadModel(`${carsPath}/luxus/lfa.gltf`, "TurnTest");
+                            hideOtherModel(luxus.lfa, luxusArr);
+                            Ui.prototype.loadModel(`${carsPath}/luxus/lfa.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 325;
                             break;
 
                         // maklaren
                         case 'f1':
-                            Ui.prototype.loadModel(`${carsPath}/maklaren/f1.gltf`, "TurnTest");
+                            hideOtherModel(maklaren.f1, maklarenArr);
+                            Ui.prototype.loadModel(`${carsPath}/maklaren/f1.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 376;
                             break;
 
                         case 'mp4':
-                            Ui.prototype.loadModel(`${carsPath}/maklaren/mp4.gltf`, "TurnTest");
+                            hideOtherModel(maklaren.mp4, maklarenArr);
+                            Ui.prototype.loadModel(`${carsPath}/maklaren/mp4.gltf`, turn);
                             acceleration = 2.9;
                             topSpeed = 329;
                             break;
 
                         case 'p1':
-                            Ui.prototype.loadModel(`${carsPath}/maklaren/p1.gltf`, "TurnTest");
+                            hideOtherModel(maklaren.p1, maklarenArr);
+                            Ui.prototype.loadModel(`${carsPath}/maklaren/p1.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 350;
                             break;
 
                         case '576 gt':
-                            Ui.prototype.loadModel(`${carsPath}/maklaren/576-gt.gltf`, "TurnTest");
+                            hideOtherModel(maklaren.maklaren_576, maklarenArr);
+                            Ui.prototype.loadModel(`${carsPath}/maklaren/576-gt.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 328;
                             break;
                         case 'GT':
-                            Ui.prototype.loadModel(`${carsPath}/maklaren/GT.gltf`, "TurnTest");
+                            hideOtherModel(maklaren.gt, maklarenArr);
+                            Ui.prototype.loadModel(`${carsPath}/maklaren/maklaren-GT.gltf`, turn);
                             acceleration = 3.1;
                             topSpeed = 326;
                             break;
 
                         // masda
                         case 'MX 5':
-                            Ui.prototype.loadModel(`${carsPath}/masda/MX-5.gltf`, "TurnTest");
+                            hideOtherModel(masda.mx5, masdaArr);
+                            Ui.prototype.loadModel(`${carsPath}/masda/MX-5.gltf`, turn);
                             acceleration = 6.5;
                             topSpeed = 219;
                             break;
                         case 'mx5 2016':
-                            Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, "TurnTest");
+                            hideOtherModel(masda.mx5_2016, masdaArr);
+                            Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, turn);
                             acceleration = 6.4;
                             topSpeed = 219;
                             break;
                         case 'RX 7':
-                            Ui.prototype.loadModel(`${carsPath}/masda/RX-7.gltf`, "TurnTest");
+                            hideOtherModel(masda.rx7, masdaArr);
+                            Ui.prototype.loadModel(`${carsPath}/masda/RX-7.gltf`, turn);
                             acceleration = 4.8;
                             topSpeed = 255;
                             break;
 
                         case 'RX 8':
-                            Ui.prototype.loadModel(`${carsPath}/masda/RX-8.gltf`, "TurnTest");
+                            hideOtherModel(masda.rx8, masdaArr);
+                            Ui.prototype.loadModel(`${carsPath}/masda/RX-8.gltf`, turn);
                             acceleration = 6.5;
                             topSpeed = 240;
                             break;
@@ -1221,121 +1743,142 @@ function playClick() {
                         // maybah
 
                         case 'exelero':
-                            Ui.prototype.loadModel(`${carsPath}/maybah/exelero.gltf`, "TurnTest");
+                            hideOtherModel(maybah.exelero, maybahArr);
+                            Ui.prototype.loadModel(`${carsPath}/maybah/exelero.gltf`, turn);
                             acceleration = 4.4;
                             topSpeed = 350;
                             break;
 
                         // mazerati
                         case 'spyder':
-                            Ui.prototype.loadModel(`${carsPath}/mazerati/spyder.gltf`, "TurnTest");
+                            hideOtherModel(mazerati.spyder, mazeratiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mazerati/spyder.gltf`, turn);
                             acceleration = 4.8;
                             topSpeed = 283;
                             break;
-                        case 'GT':
-                            Ui.prototype.loadModel(`${carsPath}/mazerati/GT.gltf`, "TurnTest");
+                        case 'G Turismo':
+                            hideOtherModel(mazerati.gt, mazeratiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mazerati/mazerati-GT.gltf`, turn);
                             acceleration = 4.3;
                             topSpeed = 302;
                             break;
                         case 'mc12':
-                            Ui.prototype.loadModel(`${carsPath}/mazerati/mc12.gltf`, "TurnTest");
+                            hideOtherModel(mazerati.mc12, mazeratiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mazerati/mc12.gltf`, turn);
                             acceleration = 3.8;
                             topSpeed = 330;
                             break;
                         case 'quatroporte':
-                            Ui.prototype.loadModel(`${carsPath}/mazerati/quatroporte.gltf`, "TurnTest");
+                            hideOtherModel(mazerati.quatroporte, mazeratiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mazerati/quatroporte.gltf`, turn);
                             acceleration = 5.1;
                             topSpeed = 285;
                             break;
 
                         // merc
                         case 'amge gts':
-                            Ui.prototype.loadModel(`${carsPath}/merc/amge-gts.gltf`, "TurnTest");
+                            hideOtherModel(merc.amge, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/amge-gts.gltf`, turn);
                             acceleration = 3.3;
                             topSpeed = 313;
                             break;
 
                         case 'cl':
-                            Ui.prototype.loadModel(`${carsPath}/merc/cl.gltf`, "TurnTest");
+                            hideOtherModel(merc.cl, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/cl.gltf`, turn);
                             acceleration = 4.2;
                             topSpeed = 250;
                             break;
 
                         case 'clk gtr':
-                            Ui.prototype.loadModel(`${carsPath}/merc/clk-gtr.gltf`, "TurnTest");
+                            hideOtherModel(merc.clk_gtr, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/clk-gtr.gltf`, turn);
                             acceleration = 3.4;
                             topSpeed = 323;
                             break;
                         case 'slr maklaren':
-                            Ui.prototype.loadModel(`${carsPath}/merc/slr-maklaren.gltf`, "TurnTest");
+                            hideOtherModel(merc.slr, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/slr-maklaren.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 337;
                             break;
                         case 'sls':
-                            Ui.prototype.loadModel(`${carsPath}/merc/sls.gltf`, "TurnTest");
+                            hideOtherModel(merc.sls, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/sls.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 323;
                             break;
                         case 'sls amge':
-                            Ui.prototype.loadModel(`${carsPath}/merc/sls-amge.gltf`, "TurnTest");
+                            hideOtherModel(merc.sls_amge, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/sls-amge.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 317;
                             break;
 
                         case 'clk dtm':
-                            Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, "TurnTest");
+                            hideOtherModel(merc.clk_dtm, mercArr);
+                            Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, turn);
                             acceleration = 3.9;
                             topSpeed = 320;
                             break;
 
                         // mitsushi
                         case '3000gt':
-                            Ui.prototype.loadModel(`${carsPath}/mitsushi/3000gt.gltf`, "TurnTest");
+                            hideOtherModel(mitsushi.mitsushi_3000gt, mitsushiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mitsushi/3000gt.gltf`, turn);
                             acceleration = 6;
                             topSpeed = 250;
                             break;
                         case 'eclipse':
-                            Ui.prototype.loadModel(`${carsPath}/mitsushi/eclipse.gltf`, "TurnTest");
+                            hideOtherModel(mitsushi.eclipse, mitsushiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mitsushi/eclipse.gltf`, turn);
                             acceleration = 6.8;
                             topSpeed = 226;
                             break;
                         case 'lancer evolution x':
-                            Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-evolution-x.gltf`, "TurnTest");
+                            hideOtherModel(mitsushi.lancer, mitsushiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-evolution-x.gltf`, turn);
                             acceleration = 3.8;
                             topSpeed = 250;
                             break;
                         case 'lancer wrc':
-                            Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-wrc.gltf`, "TurnTest");
+                            hideOtherModel(mitsushi.lancer_wrc, mitsushiArr);
+                            Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-wrc.gltf`, turn);
                             acceleration = 4.9;
                             topSpeed = 220;
                             break;
 
                         // nisan
                         case '370z':
-                            Ui.prototype.loadModel(`${carsPath}/nisan/370z.gltf`, "TurnTest");
+                            hideOtherModel(nisan.nisan_370z, nisanArr);
+                            Ui.prototype.loadModel(`${carsPath}/nisan/370z.gltf`, turn);
                             acceleration = 5;
                             topSpeed = 275;
                             break;
                         case 'gtr nizmo':
-                            Ui.prototype.loadModel(`${carsPath}/nisan/gtr-nizmo.gltf`, "TurnTest");
+                            hideOtherModel(nisan.gtr_nizmo, nisanArr);
+                            Ui.prototype.loadModel(`${carsPath}/nisan/gtr-nizmo.gltf`, turn);
                             acceleration = 2.8;
                             topSpeed = 315;
                             break;
                         case 'R35 GTR':
-                            Ui.prototype.loadModel(`${carsPath}/nisan/R35-GTR.gltf`, "TurnTest");
+                            hideOtherModel(nisan.r35, nisanArr);
+                            Ui.prototype.loadModel(`${carsPath}/nisan/R35-GTR.gltf`, turn);
                             acceleration = 2.6;
                             topSpeed = 316;
                             break;
 
                         case 'skyline gtr':
-                            Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, "TurnTest");
+                            hideOtherModel(nisan.skyline, nisanArr);
+                            Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, turn);
                             acceleration = 5.2;
                             topSpeed = 250;
                             break;
 
                         // opl
                         case 'speedster':
-                            Ui.prototype.loadModel(`${carsPath}/opl/speedster.gltf`, "TurnTest");
+                            hideOtherModel(opl.speedster, oplArr);
+                            Ui.prototype.loadModel(`${carsPath}/opl/speedster.gltf`, turn);
                             acceleration = 6.7;
                             topSpeed = 217;
                             break;
@@ -1343,58 +1886,68 @@ function playClick() {
                         // other
 
                         case 'asterisk':
-                            Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, "TurnTest");
+                            hideOtherModel(other.asterisk, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 290;
                             break;
 
                         case 'exotic car':
-                            Ui.prototype.loadModel(`${carsPath}/other/exotic-car.gltf`, "TurnTest");
+                            hideOtherModel(other.exotic, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/exotic-car.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 290;
                             break;
                         case 'concept car 2009':
-                            Ui.prototype.loadModel(`${carsPath}/other/concept-car-2009.gltf`, "TurnTest");
+                            hideOtherModel(other.concept_2009, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/concept-car-2009.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 320;
                             break;
 
                         case 'concept car5':
-                            Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, "TurnTest");
+                            hideOtherModel(other.concept_5, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 300;
                             break;
 
                         case 'concept car 7':
-                            Ui.prototype.loadModel(`${carsPath}/other/concept-car-7.gltf`, "TurnTest");
+                            hideOtherModel(other.concept_7, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/concept-car-7.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 290;
                             break;
                         case 'race car':
-                            Ui.prototype.loadModel(`${carsPath}/other/race-car.gltf`, "TurnTest");
+                            hideOtherModel(other.race_car, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/race-car.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 310;
                             break;
                         case 'vm x1':
-                            Ui.prototype.loadModel(`${carsPath}/other/vm-x1.gltf`, "TurnTest");
+                            hideOtherModel(other.vm, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/vm-x1.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 280;
                             break;
 
                         case 'wizard gt':
-                            Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, "TurnTest");
+                            hideOtherModel(other.wizard, otherArr);
+                            Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 350;
                             break;
 
                         // pahani
                         case 'zonda f':
-                            Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, "TurnTest");
+                            hideOtherModel(pahani.zonda, pahaniArr);
+                            Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 366;
                             break;
                         case 'huayra':
-                            Ui.prototype.loadModel(`${carsPath}/pahani/huayra.gltf`, "TurnTest");
+                            hideOtherModel(pahani.huayra, pahaniArr);
+                            Ui.prototype.loadModel(`${carsPath}/pahani/huayra.gltf`, turn);
                             acceleration = 2.7;
                             topSpeed = 370;
                             break;
@@ -1402,152 +1955,174 @@ function playClick() {
                         // pontiak
 
                         case 'firebird':
-                            Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, "TurnTest");
+                            hideOtherModel(pontiak.firebird, pontiakArr);
+                            Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, turn);
                             acceleration = 5.3;
                             topSpeed = 239;
                             break;
                         case 'gto':
-                            Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, "TurnTest");
+                            hideOtherModel(pontiak.gto, pontiakArr);
+                            Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, turn);
                             acceleration = 4.6;
                             topSpeed = 274;
                             break;
 
                         // porshe
                         case 'carrera gt':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/carrera-gt.gltf`, "TurnTest");
+                            hideOtherModel(porshe.carrera, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/carrera-gt.gltf`, turn);
                             acceleration = 3.3;
                             topSpeed = 345;
                             break;
                         case '911 turbo':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/911-turbo.gltf`, "TurnTest");
+                            hideOtherModel(porshe.porshe_911, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/911-turbo.gltf`, turn);
                             acceleration = 2.4;
                             topSpeed = 349;
                             break;
                         case '996':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/996.gltf`, "TurnTest");
+                            hideOtherModel(porshe.porshe_996, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/996.gltf`, turn);
                             acceleration = 3.9;
                             topSpeed = 319;
                             break;
                         case 'boxster':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/boxster.gltf`, "TurnTest");
+                            hideOtherModel(porshe.boxster, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/boxster.gltf`, turn);
                             acceleration = 6.5;
                             topSpeed = 256;
                             break;
                         case 'boxster s':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/boxster-s.gltf`, "TurnTest");
+                            hideOtherModel(porshe.boxster_s, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/boxster-s.gltf`, turn);
                             acceleration = 3.5;
                             topSpeed = 321;
                             break;
                         case 'panamera turbo':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/panamera-turbo.gltf`, "TurnTest");
+                            hideOtherModel(porshe.panamera, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/panamera-turbo.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 306;
                             break;
                         case 'cayman 2017':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/cayman-2017.gltf`, "TurnTest");
+                            hideOtherModel(porshe.cayman, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/cayman-2017.gltf`, turn);
                             acceleration = 3.4;
                             topSpeed = 321;
                             break;
                         case '918 r type':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/918-r-type.gltf`, "TurnTest");
+                            hideOtherModel(porshe.porshe_918, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/918-r-type.gltf`, turn);
                             acceleration = 2.5;
                             topSpeed = 350;
                             break;
 
                         case '997 gt3':
-                            Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, "TurnTest");
+                            hideOtherModel(porshe.porshe_997, porsheArr);
+                            Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, turn);
                             acceleration = 2.5;
                             topSpeed = 350;
                             break;
 
                         // rols-roys
                         case 'phantom':
-
-                            Ui.prototype.loadModel(`${carsPath}/rols-roys/phantom.gltf`, "TurnTest");
+                            // hideOtherModel(rols_roys.phantom);
+                            Ui.prototype.loadModel(`${carsPath}/rols-roys/phantom.gltf`, turn);
                             acceleration = 5.9;
                             topSpeed = 240;
                             break;
                         //  rufe
                         case 'rt 12s':
-                            Ui.prototype.loadModel(`${carsPath}/rufe/rt-12s.gltf`, "TurnTest");
+                            // hideOtherModel(rufe.rt_12s);
+                            Ui.prototype.loadModel(`${carsPath}/rufe/rt-12s.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 362;
                             break;
 
                         // sab
                         case 'aero x':
-                            Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, "TurnTest");
+                            // hideOtherModel(sab.aero);
+                            Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, turn);
                             acceleration = 4.9;
                             topSpeed = 255;
                             break;
 
                         // salen
                         case 's7':
-                            Ui.prototype.loadModel(`${carsPath}/salen/s7.gltf`, "TurnTest");
+                            // hideOtherModel(salen.s7);
+                            Ui.prototype.loadModel(`${carsPath}/salen/s7.gltf`, turn);
                             acceleration = 3.3;
                             topSpeed = 322;
                             break;
                         // shelbi
                         case 'cobra':
-                            Ui.prototype.loadModel(`${carsPath}/shelbi/cobra.gltf`, "TurnTest");
+                            // hideOtherModel(shelbi.cobra);
+                            Ui.prototype.loadModel(`${carsPath}/shelbi/cobra.gltf`, turn);
                             acceleration = 3.8;
                             topSpeed = 300;
                             break;
                         // tezla
                         case 'model s':
-                            Ui.prototype.loadModel(`${carsPath}/tezla/model-s.gltf`, "TurnTest");
+                            // hideOtherModel(tezla.model_s);
+                            Ui.prototype.loadModel(`${carsPath}/tezla/model-s.gltf`, turn);
                             acceleration = 2.5;
                             topSpeed = 249;
                             break;
                         // tojota
                         case 'soarer':
-                            Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, "TurnTest");
+                            // hideOtherModel(tojota.soarer);
+                            Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, turn);
                             acceleration = 5.8;
                             topSpeed = 252;
                             break;
 
                         // twr
                         case 'sagaris':
-                            Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, "TurnTest");
+                            // hideOtherModel(twr.sagaris);
+                            Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, turn);
                             acceleration = 3.7;
                             topSpeed = 295;
                             break;
 
                         // vendeta
                         case 'gtr 800':
-                            Ui.prototype.loadModel(`${carsPath}/vendeta/gtr-800.gltf`, "TurnTest");
+                            // hideOtherModel(vendeta.gtr_800);
+                            Ui.prototype.loadModel(`${carsPath}/vendeta/gtr-800.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 360;
                             break;
                         // vw
                         case 'ego':
-                            Ui.prototype.loadModel(`${carsPath}/vw/ego.gltf`, "TurnTest");
+                            // hideOtherModel(vw.ego);
+                            Ui.prototype.loadModel(`${carsPath}/vw/ego.gltf`, turn);
                             acceleration = 4;
                             topSpeed = 300;
                             break;
 
                         case 'st1':
-                            Ui.prototype.loadModel(`${carsPath}/zenwo/st1.gltf`, "TurnTest");
+                            // hideOtherModel(zenwo.st1);
+                            Ui.prototype.loadModel(`${carsPath}/zenwo/st1.gltf`, turn);
                             acceleration = 3.2;
                             topSpeed = 375;
                             break;
                         //  zubaru
 
-
                         case 'b11s':
-                            Ui.prototype.loadModel(`${carsPath}/zubaru/b11s.gltf`, "TurnTest");
+                            hideOtherModel(zubaru.b11s, zubaruArr);
+                            Ui.prototype.loadModel(`${carsPath}/zubaru/b11s.gltf`, turn);
                             acceleration = 3;
                             topSpeed = 270;
                             break;
                         case 'impreza':
-                            Ui.prototype.loadModel(`${carsPath}/zubaru/impreza.gltf`, "TurnTest");
+                            hideOtherModel(zubaru.impreza, zubaruArr);
+                            Ui.prototype.loadModel(`${carsPath}/zubaru/impreza.gltf`, turn);
                             acceleration = 5.5;
                             topSpeed = 255;
                             break;
 
                     }
 
-                    const tpl = loadTemplate('#template-car-select', '#car-select');
+                    const tpl = loadTemplate('#template-car-info', '#car-info');
 
                     const template = $$(tpl).html();
                     const compiledTemplate = Template7.compile(template);
@@ -1559,18 +2134,21 @@ function playClick() {
 
                     };
 
-                    const carSelectTpl = compiledTemplate(model);
+                    const carInfoTpl = compiledTemplate(model);
 
-                    divApp.innerHTML = carSelectTpl;
+                    const divInfo = document.querySelector('.info');
+
+                    divInfo.innerHTML = carInfoTpl;
 
                     // for debugging
                     entity.addComponent("script");
                     // entity.script.create("firstPersonCamera");
 
                     function selectCar() {
+                        // remove Turn Test
                         modelEntity.removeComponent('script');
-                        modelEntity.removeComponent('model');
 
+                        // add test drive
                         modelEntity.addComponent('script');
                         modelEntity.script.create('TestDrive');
 
@@ -1581,13 +2159,14 @@ function playClick() {
 
                 }
                 // add click to models
-                Array.from(models)
-                    .map(model => model.addEventListener('click', getModel)
-                    );
+                models.addEventListener('click', getModel);
 
             }
 
-            let trackName = (event.target).querySelector('.item-title').textContent;
+            // add click to makes
+            makes.addEventListener('click', showModels);
+
+            let trackName = event.target.id || (event.target).textContent;
 
             switch (trackName) {
                 case 'Barcelona':
@@ -1661,20 +2240,11 @@ function playClick() {
             app.root.findByName('modelEntity').enabled = false;
 
             hideTracks();
-            showMakes();
-
-            const makes = document.querySelectorAll('.cars .row .col-100');
-
-            // add click to makes
-            Array.from(makes)
-                .map(make => make.addEventListener('click', showModels)
-                );
 
         }
         // add click to tracks
-        Array.from(tracks)
-            .map(track => track.addEventListener('click', trackSelect)
-            );
+        tracksContainer.addEventListener('click', trackSelect);
+
     }
 
     function careerClick() {
@@ -1691,222 +2261,13 @@ btnPlay.addEventListener('click', playClick);
 // model from firebase
 // Ui.prototype.loadModel('https://firebasestorage.googleapis.com/v0/b/supercars-dream.appspot.com/o/tezla%2Fmodel-s.gltf?alt=media&token=876feba6-f593-4e5d-8fe0-343b75fc0b19', 'TestDrive');
 
-// model.removeComponent("model");
-
 /* test drive */
-
-/* wrong position */
-// Ui.prototype.loadModel(`${carsPath}/bmv/8-series-concept.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/i8.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/bugati/chiron.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bugati/veyron.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/dodg/zrt-challenger.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/ferari/812-superfast.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/f12.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/la-ferari.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/fort/gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/fort/mustang.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/henesey/venom-gt.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/hevrolet/corvette-C7.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/jagur/f-type.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/jagur/cx-75.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/konigseg/agera.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/lambo/huracan.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/diablo-sv.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/gallardo.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/urus.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/veneno.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/lotuz/exige-s.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/maklaren/f1.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maklaren/mp4.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maklaren/p1.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/maybah/exelero.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/mazerati/GT.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/merc/sls-amge.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/mitsushi/lancer-evolution-x.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/nisan/gtr-nizmo.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/pahani/zonda.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/pahani/huayra.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/porshe/car-porsche-001.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/918-r-type.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/rols-roys/phantom.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/rufe/rt-12s.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/tezla/model-s.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/mazerati/mc12.gltf`, "TestDrive");
 
 // issue with textures path
 // Ui.prototype.loadModel(`${carsPath}/akura/NZX_GT3/NZX_GT3.gltf`, "TestDrive");
 // Ui.prototype.loadModel(`${carsPath}/lambo/aventador-roadster/aventador.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mazerati/gran-cabrio/Cabrio.gltf`, "TestDrive");
+// Ui.prototype.loadModel(`${carsPath}/mazerati/gran-cabrio/gran-cabrio.gltf`, "TestDrive");
 // Ui.prototype.loadModel(`${carsPath}/other/green-super-sport/SuperSport.gltf`, "TestDrive");
-
-/* working             */
-// Ui.prototype.loadModel(`${carsPath}/adi/tt-clubsport.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/rsq.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/rs7.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/avus.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/a8.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/r8-fsi.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/adi/r18.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/akura/nzx.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/akura/xrx.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/alfa/zagato-tz3-stradale.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/aston/rapide.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/vantage.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/aston-rapide.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/dbs-volante.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/vanquish.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/one-77.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/v12-vanquish.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/DBR9.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/aston/vulcan.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/bentle/continental-gt-supersports.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/bmv/m3-e92.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/M3-GTR.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/m3.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/m5-tuning.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/m6.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/bmv/vision-efficient.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/cadilac/cien.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/cadilac/cts.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/chonda/s2000-tuned.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/chonda/NZX TAKATA DOME.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/citron/gt.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/dodg/viper.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/dodg/viper-zrt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/dodg/viper-gts.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/ferari/430.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/458-italia.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/599.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/modena.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/ferari/testarosa.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/fort/gt-90.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/fort/mustang-salen.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/hevrolet/camaro-old.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/hevrolet/corvete-concept.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/holdem/monaro.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/hrysler/ME.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/hrysler/300c.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/hrysler/crossfire.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/jagur/xkr.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/konigseg/one1.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/konigseg/ccx.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/lambo/aventador.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/asterion.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/lambo/murcielago.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/lotuz/evora.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/luxus/gs.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/luxus/lfa.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/maklaren/576-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maklaren/GT.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/maklaren/mp4-12c.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/masda/MX-5.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/masda/RX-7.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/masda/RX-8.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/masda/mx5-2016.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/mazerati/spyder.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mazerati/quatroporte.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/merc/amge-gts.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/merc/cl.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/merc/clk-dtm.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/merc/clk-gtr.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/merc/slr-maklaren.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/merc/sls.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/mitsushi/3000gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/mitsushi/eclipse.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/nisan/370z.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/nisan/skyline-gtr.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/other/exotic-car.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/concept-car-2009.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/concept-car-7.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/concept-car5.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/race-car.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/vm-x1.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/wizard-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/other/asterisk.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/pahani/zonda-f.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/pontiak/firebird.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/pontiak/gto.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/porshe/carrera-gt.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/911-turbo.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/996.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/997-gt3.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/boxster.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/boxster-s.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/panamera-turbo.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/porshe/cayman-2017.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/sab/aero-x.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/salen/s7.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/shelbi/cobra.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/tojota/soarer.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/twr/sagaris.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/vendeta/gtr-800.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/vw/ego.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/zenwo/st1.gltf`, "TestDrive");
-
-// Ui.prototype.loadModel(`${carsPath}/zubaru/impreza-wrx-zti.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/zubaru/b11s.gltf`, "TestDrive");
-// Ui.prototype.loadModel(`${carsPath}/zubaru/impreza.gltf`, "TestDrive");
 
 Ui.prototype.initialize = function () {
 

@@ -1,4 +1,10 @@
 {
+    "adi":
+    {"avus":{
+        "acceleration": 2.8,
+        "topSpeed": 340
+    }
+},
     "akura":
     {
         "nzx_r":

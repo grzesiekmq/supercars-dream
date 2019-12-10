@@ -1,4 +1,4 @@
-  const Turn = pc.createScript('TurnTest');
+  const Turn = pc.createScript('Turn');
 
   // initialize code called once per entity
   Turn.prototype.initialize = function() {

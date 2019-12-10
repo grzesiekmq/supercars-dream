@@ -6,7 +6,7 @@
         content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
 
-    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="css/metro-all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <iframe id="template-modes" src="partials/modes.html" style="display:none"></iframe>
@@ -14,7 +14,7 @@
     <iframe id="template-tracks" src="partials/tracks.html" style="display:none"></iframe>
     <iframe id="template-makes" src="partials/makes.html" style="display:none"></iframe>
     <iframe id="template-models" src="partials/models.html" style="display:none"></iframe>
-    <iframe id="template-car-select" src="partials/car-select.html" style="display:none"></iframe>
+    <iframe id="template-car-info" src="partials/car-info.html" style="display:none"></iframe>
 
 
     <title>Supercars dream</title>
@@ -29,8 +29,7 @@
 
             <li>
 
-                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black"
-                    id="play">
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black" id="play">
                     <h2>
                         play
                     </h2>
@@ -38,8 +37,7 @@
             </li>
             <li>
 
-                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black"
-                    id="garage">
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black" id="garage">
                     <h2>
                         garage
                     </h2>
@@ -47,8 +45,7 @@
             </li>
             <li>
 
-                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black"
-                    id="quit">
+                <a class="tile-medium mx-auto my-4 p-1 text-center bg-orange outline ol-white fg-black" id="quit">
                     <h2>
                         quit
                     </h2>
@@ -57,6 +54,8 @@
         </ul>
 
     </div>
+
+
     <div id="debug" class="fg-orange">
         <div class="z"></div>
         <div class="timer">
@@ -67,22 +66,31 @@
     <canvas id="application-canvas"></canvas>
 
     <script src="cordova.js"></script>
-    <script src="https://code.playcanvas.com/playcanvas-stable.js"></script>
+    
+    <!-- libs -->
+    <script src="js/lib/playcanvas-stable.js"></script>
     <script src="js/lib/playcanvas-gltf.js"></script>
+
     <script src="js/lib/framework7.js"></script>
-    <script src="https://cdn.metroui.org.ua/v4/js/metro.js"></script>
+
+    <script src="js/lib/metro.js"></script>
 
     <!-- <script src="js/routing.js"></script> -->
 
     <script src="js/app.js"></script>
+
+    <script src="js/lib/ammo.js"></script>
+
     <script src="js/main-menu.js"></script>
     <script src="js/model.js"></script>
     <script src="js/test-drive.js"></script>
-    <script src="js/helpers/first_person_camera.js"></script>
+
+
+
     <script src="js/camera.js"></script>
     <script src="js/light.js"></script>
     <script src="js/ui.js"></script>
-    <script src="js/turn-test.js"></script>
+    <script src="js/turn.js"></script>
 </body>
 
 </html>

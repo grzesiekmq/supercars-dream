@@ -5,3 +5,6 @@ platforms
 hooks
 plugins
 www/assets/
+.vscode
+typings
+jsconfig.json
