@@ -688,8 +688,8 @@ function playClick() {
                     console.log(makes);
 
                 }
-                back.addEventListener('click', goBack);
 
+                
                 function getModel() {
 
                     let modelName = (event.target).textContent.trim();
