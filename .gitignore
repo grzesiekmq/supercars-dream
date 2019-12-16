@@ -8,3 +8,6 @@ www/assets/
 .vscode
 typings
 jsconfig.json
+.editorconfig
+yarn.lock
+.cache
