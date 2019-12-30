@@ -8,6 +8,9 @@
 body {
   background: #1d1d1d;
 }
+#application-canvas{
+  width: 100%;
+}
 
 .block.cars .row .col-100,
 .block.models .row .col-100,

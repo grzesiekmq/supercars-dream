@@ -1,5 +1,4 @@
 node_modules
-package.json
 package-lock.json
 platforms
 hooks
@@ -10,4 +9,5 @@ typings
 jsconfig.json
 .editorconfig
 yarn.lock
+/dist
 .cache

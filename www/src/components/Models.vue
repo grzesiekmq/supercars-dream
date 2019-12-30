@@ -6,34 +6,46 @@
     >
       <h2>back</h2>
     </router-link>
-    <h2 class="cars-title fg-orange text-center mt-14-minus">Model selection</h2>
-    <button
+    <h2
+      class="cars-title fg-orange text-center mt-14-minus"
+      v-for="models in filteredModels"
+      :key="models.id"
+    >Model selection</h2>
+    <router-link
+      :to="{name:'car-select', params: {make: clickedMake, model: model}}"
+      v-for="model in models"
+      :key="model"
       class="select-car tile-small place-right mt-17-minus p-1 text-center bg-orange border bd-orange outline ol-white fg-black"
-    >Select</button>
+    >Select</router-link>
 
     <div class="info"></div>
 
-    <!-- <div class="block models"> -->
-    <!-- <div class="row"> -->
-
     <ul class="inline-list" @click="modelHandler" v-for="models in filteredModels" :key="models.id">
       <li v-for="model in models" :key="model">
-        <button
+        <router-link
+          :to="{name:'car-select',params:{ model:model}}"
           class="col-100 tile-small m-2 p-1 va-middle bg-orange border bd-orange outline ol-white fg-black"
         >
           <h4 class="model-name">{{model}}</h4>
-        </button>
+        </router-link>
       </li>
     </ul>
-
-    <!-- </div> -->
-    <!-- </div> -->
   </div>
 </template>
                     
 <script>
 import axios from "axios";
 import bus from "../eventBus";
+
+
+import * as BABYLON from "@babylonjs/core";
+import "@babylonjs/loaders/glTF";
+
+import scene from "../js/app";
+
+const carsPath = "www/assets/models/cars";
+
+
 
 const json = "www/data/carProps.json";
 
@@ -235,7 +247,15 @@ const cars = [
 
 export default {
   data() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    return { cars, clickedMake: "", models: null };
+=======
     return { cars, clickedMake: "" };
+>>>>>>> temp
+=======
+    return { cars, clickedMake: "", models: null };
+>>>>>>> converting playcanvas to babylon game, before adding car physics
   },
   methods: {
     getCars() {
@@ -243,7 +263,37 @@ export default {
     },
     modelHandler(event) {
       bus.$emit("clickedModel", event.target.textContent.trim());
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> converting playcanvas to babylon game, before adding car physics
+
+      if (event.target.textContent.trim() === "avus") {
+        const carName = "avus.gltf";
+
+        BABYLON.SceneLoader.Append(`${carsPath}/adi/`, carName, scene, function(
+          newMeshes
+        ) {
+          const car = scene.getNodeByName(carName);
+
+          car.rotationQuaternion.toEulerAnglesToRef(car.rotation);
+          car.rotationQuaternion = null;
+
+          scene.registerBeforeRender(function() {
+            car.rotation.y += 0.01;
+          });
+        });
+      }
+<<<<<<< HEAD
     },
+
+=======
+    },
+>>>>>>> temp
+=======
+    },
+
+>>>>>>> converting playcanvas to babylon game, before adding car physics
     onMakeClicked(clickedMake) {
       this.clickedMake = clickedMake;
     }
@@ -251,6 +301,14 @@ export default {
   created() {
     bus.$on("clickedMake", this.onMakeClicked);
   },
+<<<<<<< HEAD
+<<<<<<< HEAD
+  mounted() {},
+=======
+>>>>>>> temp
+=======
+  mounted() {},
+>>>>>>> converting playcanvas to babylon game, before adding car physics
   destroyed() {
     bus.$off("clickedMake", this.onMakeClicked);
   },

@@ -1,28 +1,36 @@
 <template>
-    <div class="page-content">
-      <router-link to="modes" 
-      class="tile-medium mt-1 p-1 text-center text-upper va-middle bg-white border bd-orange fg-orange">
-        <h2>back</h2>
-      </router-link>
+  <div class="page-content">
+    <router-link
+      to="modes"
+      class="tile-medium mt-1 p-1 text-center text-upper va-middle bg-white border bd-orange fg-orange"
+    >
+      <h2>back</h2>
+    </router-link>
 
-      <h2 class="tracks-title fg-orange text-center mt-14-minus">Track selection</h2>
-      <div class="block tracks">
-        <div class="row">
-          <router-link to="makes"
-            v-for="track of tracks"
-            :key="track.name"
-            class="col-20 tile-medium m-2 p-1 va-middle bg-orange border bd-orange outline ol-white fg-black"
-            :id="track.name"
-          >
-            <h6 class="item-title">{{track.name}}</h6>
-            <img :src="track.image" width="100" height="100" :id="track.name" />
-          </router-link>
-        </div>
+    <h2 class="tracks-title fg-orange text-center mt-14-minus">Track selection</h2>
+    <div class="block tracks" @click="clickedTrack">
+      <div class="row">
+        <router-link
+          to="makes"
+          v-for="track of tracks"
+          :key="track.name"
+          class="col-20 tile-medium m-2 p-1 va-middle bg-orange border bd-orange outline ol-white fg-black"
+          :id="track.name"
+        >
+          <h6 class="item-title">{{track.name}}</h6>
+          <img :src="track.image" width="100" height="100" :id="track.name" />
+        </router-link>
       </div>
     </div>
-
+  </div>
 </template>
 <script>
+import * as BABYLON from "@babylonjs/core";
+import "@babylonjs/loaders/glTF";
+import scene from "../js/app";
+
+const tracksPath = "www/assets/models/tracks";
+const trackName = "barcelona.gltf";
 const trackImages = "www/assets/models/tracks/images/";
 const tracks = [
   {
@@ -132,8 +140,24 @@ const tracks = [
 ];
 
 
+
+
+
 export default {
-  data() {
+  methods: {
+    clickedTrack(event) {
+      if (event.target.textContent.trim() === "Barcelona") {
+        BABYLON.SceneLoader.Append(
+          `${tracksPath}/testing/`,
+          trackName,
+          scene,
+          function(newMeshes) {}
+        );
+      }
+    }
+  },
+
+data() {
     return {
       tracks
     };

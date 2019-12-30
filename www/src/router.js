@@ -17,6 +17,14 @@ const routes = [{
 
 },
 {
+    path: '/career',
+    name: 'career',
+    component: () =>
+        import('./components/TestDrive.vue')
+
+},
+
+{
     path: '/garage',
     name: 'garage',
     component: () =>
@@ -46,6 +54,12 @@ const routes = [{
     name: 'car-select',
     component: () =>
         import('./components/CarSelect.vue')
+},
+{
+    path: '/:make/:model/drive',
+    name: 'testdrive',
+    component: () =>
+        import('./components/TestDrive.vue')
 }
 
 
