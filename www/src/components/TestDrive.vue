@@ -1,0 +1,42 @@
+<template>
+<div class="test-drive">
+
+    <button class="brake">brake</button>
+    <button class="left">left</button>
+    <button class="right">right</button>
+    <button class="accelerate">accelerate</button>
+</div>
+</template>
+<style>
+.left, .right, .brake, .acc{
+    background: #0050ef;
+    color: white;
+    width: 24vw;
+    height: 20vh;
+}
+
+.left, .right, .brake {
+    position: absolute;
+
+    bottom: 10px;
+}
+
+.brake {
+    left: 40%;
+}
+
+.left {
+    left: 10%;
+}
+
+.right {
+    right: 10%;
+}
+
+.acc {
+    position: absolute;
+
+    bottom: 90px;
+    right: 40%;
+}
+</style>

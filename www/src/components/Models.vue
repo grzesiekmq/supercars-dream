@@ -37,15 +37,12 @@
 import axios from "axios";
 import bus from "../eventBus";
 
-
 import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 
 import scene from "../js/app";
 
 const carsPath = "www/assets/models/cars";
-
-
 
 const json = "www/data/carProps.json";
 
@@ -247,15 +244,7 @@ const cars = [
 
 export default {
   data() {
-<<<<<<< HEAD
-<<<<<<< HEAD
     return { cars, clickedMake: "", models: null };
-=======
-    return { cars, clickedMake: "" };
->>>>>>> temp
-=======
-    return { cars, clickedMake: "", models: null };
->>>>>>> converting playcanvas to babylon game, before adding car physics
   },
   methods: {
     getCars() {
@@ -263,10 +252,6 @@ export default {
     },
     modelHandler(event) {
       bus.$emit("clickedModel", event.target.textContent.trim());
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> converting playcanvas to babylon game, before adding car physics
 
       if (event.target.textContent.trim() === "avus") {
         const carName = "avus.gltf";
@@ -284,16 +269,8 @@ export default {
           });
         });
       }
-<<<<<<< HEAD
     },
 
-=======
-    },
->>>>>>> temp
-=======
-    },
-
->>>>>>> converting playcanvas to babylon game, before adding car physics
     onMakeClicked(clickedMake) {
       this.clickedMake = clickedMake;
     }
@@ -301,14 +278,9 @@ export default {
   created() {
     bus.$on("clickedMake", this.onMakeClicked);
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   mounted() {},
-=======
->>>>>>> temp
-=======
-  mounted() {},
->>>>>>> converting playcanvas to babylon game, before adding car physics
+
   destroyed() {
     bus.$off("clickedMake", this.onMakeClicked);
   },
