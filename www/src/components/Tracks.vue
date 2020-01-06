@@ -29,8 +29,8 @@ import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import scene from "../js/app";
 
-const tracksPath = "www/assets/models/tracks";
-const trackName = "barcelona.gltf";
+const tracksPath = "www/assets/models/tracks/";
+
 const trackImages = "www/assets/models/tracks/images/";
 const tracks = [
   {
@@ -44,7 +44,7 @@ const tracks = [
   },
 
   {
-    name: "Brands Hatch",
+    name: "Brands-Hatch",
     image: `${trackImages}Brands_Hatch.jpg`
   },
 
@@ -69,7 +69,7 @@ const tracks = [
   },
 
   {
-    name: "Isle of Man",
+    name: "Isle-of-Man",
     image: `${trackImages}Isle_of_Man.jpg`
   },
 
@@ -79,17 +79,17 @@ const tracks = [
   },
 
   {
-    name: "Laguna Seca",
+    name: "Laguna-Seca",
     image: `${trackImages}Laguna_Seca.jpg`
   },
 
   {
-    name: "Le Mans",
+    name: "Le-Mans",
     image: `${trackImages}Le_Mans.jpg`
   },
 
   {
-    name: "Magny Cours",
+    name: "Magny-Cours",
     image: `${trackImages}Magny_Cours.jpg`
   },
 
@@ -114,7 +114,7 @@ const tracks = [
   },
 
   {
-    name: "Red Bull Ring",
+    name: "Red-Bull-Ring",
     image: `${trackImages}Red_Bull_Ring.jpg`
   },
 
@@ -146,15 +146,16 @@ const tracks = [
 export default {
   methods: {
     clickedTrack(event) {
-      if (event.target.textContent.trim() === "Barcelona") {
+      const trackName = event.target.textContent.trim() + '.gltf'
+      
         BABYLON.SceneLoader.Append(
-          `${tracksPath}/testing/`,
+          `${tracksPath}`,
           trackName,
           scene,
           function(newMeshes) {}
         );
       }
-    }
+    
   },
 
 data() {

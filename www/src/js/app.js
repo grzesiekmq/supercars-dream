@@ -1,4 +1,7 @@
-import { Engine, Scene, TargetCamera, Vector3, PointLight } from '@babylonjs/core'
+import { Engine, Scene, ArcRotateCamera, Vector3, HemisphericLight } from '@babylonjs/core'
+window.CANNON = require('cannon');
+
+
 
 // Create a Babylon application
 const canvas = document.querySelector("#application-canvas");
@@ -11,13 +14,22 @@ function createScene() {
 
     const scene = new Scene(engine);
 
-    const camera = new TargetCamera('TargetCamera', new Vector3(0, 0, -40), scene)
+    const camera = new ArcRotateCamera('ArcRotateCamera', 1, 1, 40, new Vector3(0, 0, -40), scene)
 
-    camera.minZ = 1
+    
+    camera.attachControl(canvas, true)
 
-    camera.maxZ = 10000
+    const light = new HemisphericLight("HemiLight", new Vector3(0, 3, -40), scene)
 
-    const light = new PointLight("PointLight", new Vector3(0, 3, 0), scene)
+    scene.enablePhysics();
+
+    scene.getPhysicsEngine().setGravity(new Vector3(0, 0, 0))
+
+    scene.collisionsEnabled = true;
+
+
+    
+    console.log(scene)
 
     return scene;
 

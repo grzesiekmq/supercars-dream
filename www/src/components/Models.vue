@@ -38,11 +38,16 @@ import axios from "axios";
 import bus from "../eventBus";
 
 import * as BABYLON from "@babylonjs/core";
+
 import "@babylonjs/loaders/glTF";
 
+import * as Materials from "@babylonjs/materials";
+
 import scene from "../js/app";
+import { Vector3, Quaternion } from "@babylonjs/core";
 
 const carsPath = "www/assets/models/cars";
+const texturesPath = "www/assets/textures";
 
 const json = "www/data/carProps.json";
 
@@ -242,6 +247,202 @@ const cars = [
   { name: "zubaru", models: ["b11s", "impreza"] }
 ];
 
+export function getCar(carName, scene, make) {
+  function onSuccess(scene) {
+    let track = scene.rootNodes[2];
+    let mesh = scene.rootNodes[3];
+
+    let wheelRR = scene.getNodeByName("Audi Avus_0");
+    let wheelRL = scene.getNodeByName("Audi Avus_1");
+    let wheelFL = scene.getNodeByName("Audi Avus_2");
+    let wheelFR = scene.getNodeByName("Audi Avus_3");
+    // todo wheel colliders
+
+    const cartest = scene.getNodeByName("avus.gltf");
+
+    const tracktest = scene.getNodeByName("Barcelona.stl");
+
+    const canvas = document.querySelector("#application-canvas");
+
+    let forceDirection = mesh.right;
+    const engineForce = 40000;
+    const brakeForce = -20000;
+    const contactLocalRefPoint = new Vector3.Zero();
+
+    // ground
+
+    const ground = BABYLON.MeshBuilder.CreateGround(
+      "ground",
+      { width: 10000, height: 4000 },
+      scene
+    );
+    const groundMat = new BABYLON.StandardMaterial("ground Material", scene);
+    groundMat.diffuseTexture = new BABYLON.Texture(
+      `${texturesPath}/grass3.jpg`,
+      scene
+    );
+    groundMat.diffuseTexture.uScale = 50;
+    groundMat.diffuseTexture.vScale = 50;
+
+    ground.material = groundMat;
+
+    // track
+    //  todo texture on track
+
+    tracktest.material = new Materials.TriPlanarMaterial(
+      "track Material",
+      scene
+    );
+    tracktest.material.diffuseTextureX = new BABYLON.Texture(
+      `${texturesPath}/asphalt.jpg`,
+      scene
+    );
+    tracktest.material.diffuseTextureY = tracktest.material.diffuseTextureX;
+    tracktest.material.diffuseTextureZ = tracktest.material.diffuseTextureX;
+
+    tracktest.material.specularPower = 100;
+
+    tracktest.material.tileSize = 100;
+
+    // skybox
+
+    const skyMat = new Materials.SkyMaterial("skyMaterial", scene);
+    skyMat.backFaceCulling = false;
+    skyMat.luminance = 1;
+    skyMat.inclination = 0;
+    skyMat.turbidity = 100;
+
+    skyMat.cameraOffset.y = 100;
+
+    const skybox = BABYLON.Mesh.CreateBox("skyBox", 10000, scene);
+    skybox.material = skyMat;
+
+    // car impostor
+    mesh.physicsImpostor = new BABYLON.PhysicsImpostor(
+      mesh,
+      BABYLON.PhysicsImpostor.BoxImpostor,
+      { mass: 1250 },
+      scene
+    );
+    // track impostor
+    track.physicsImpostor = new BABYLON.PhysicsImpostor(
+      track,
+      BABYLON.PhysicsImpostor.BoxImpostor,
+      { mass: 0 },
+      scene
+    );
+
+    mesh.rotationQuaternion = new BABYLON.Quaternion.Zero();
+
+    mesh.rotationQuaternion = null;
+
+    mesh.rotation.y = 1.5;
+
+    track.scaling = new Vector3(10, 1, 10);
+
+    track.position.x = 400;
+    track.position.y = -3;
+    track.position.z = -120;
+
+    ground.position.y = -4;
+
+    mesh.checkCollisions = true;
+    track.checkCollisions = true;
+
+    console.log("before forcedir", forceDirection);
+
+    // follow camera
+    const followCam = new BABYLON.FollowCamera(
+      "FollowCam",
+      new Vector3(100, 0, 0),
+      scene
+    );
+    followCam.radius = 10;
+    followCam.heightOffset = 10;
+    followCam.rotationOffset = 0;
+
+    followCam.attachControl(canvas, true);
+
+    followCam.lockedTarget = mesh;
+
+    scene.activeCameras.push(followCam);
+
+    scene.registerBeforeRender(function() {
+      const debug = document.querySelector("#debug");
+      // console.log("pos", mesh.position);
+      if (Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6) <= 0) {
+        debug.innerHTML = `${mesh.physicsImpostor
+          .getLinearVelocity()
+          .z.toFixed(2)} m/s \
+      ${Math.abs(
+        Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6)
+      )} kph`;
+      } else {
+        debug.innerHTML = `${mesh.physicsImpostor
+          .getLinearVelocity()
+          .z.toFixed(2)} m/s \
+      ${Math.abs(
+        Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6)
+      )} kph R`;
+      }
+
+      if (mesh.intersectsMesh(track)) {
+        console.log("check", "yes");
+      } else {
+        // console.log('no intersection')
+      }
+    });
+    // keyboard controls
+    scene.onKeyboardObservable.add(kbInfo => {
+      switch (kbInfo.type) {
+        case BABYLON.KeyboardEventTypes.KEYDOWN:
+          switch (kbInfo.event.key) {
+            case "w":
+              mesh.physicsImpostor.applyForce(
+                forceDirection.scale(engineForce),
+                mesh.getAbsolutePosition().add(contactLocalRefPoint)
+              );
+              console.log("pressed w force", forceDirection);
+
+              break;
+            case "a":
+              cartest.rotate(
+                BABYLON.Axis.Y,
+                -Math.PI / 64,
+                BABYLON.Space.WORLD
+              );
+
+              // forceDirection.z -= Math.PI / 64;
+
+              console.log("forcedir", forceDirection);
+              break;
+            case "s":
+              mesh.physicsImpostor.applyForce(
+                forceDirection.scale(brakeForce),
+                mesh.getAbsolutePosition().add(contactLocalRefPoint)
+              );
+
+              break;
+            case "d":
+              cartest.rotate(BABYLON.Axis.Y, Math.PI / 64, BABYLON.Space.WORLD);
+
+              //  forceDirection.z += Math.PI / 64;
+              console.log(mesh.rotation);
+              break;
+
+              break;
+          }
+          break;
+      }
+    });
+
+    console.log("car mesh ", mesh);
+    console.log("track", track);
+  }
+
+  BABYLON.SceneLoader.Append(`${carsPath}/${make}/`, carName, scene, onSuccess);
+}
+
 export default {
   data() {
     return { cars, clickedMake: "", models: null };
@@ -253,22 +454,8 @@ export default {
     modelHandler(event) {
       bus.$emit("clickedModel", event.target.textContent.trim());
 
-      if (event.target.textContent.trim() === "avus") {
-        const carName = "avus.gltf";
-
-        BABYLON.SceneLoader.Append(`${carsPath}/adi/`, carName, scene, function(
-          newMeshes
-        ) {
-          const car = scene.getNodeByName(carName);
-
-          car.rotationQuaternion.toEulerAnglesToRef(car.rotation);
-          car.rotationQuaternion = null;
-
-          scene.registerBeforeRender(function() {
-            car.rotation.y += 0.01;
-          });
-        });
-      }
+      const carName = event.target.textContent.trim() + ".gltf";
+      getCar(carName, scene, this.clickedMake);
     },
 
     onMakeClicked(clickedMake) {
