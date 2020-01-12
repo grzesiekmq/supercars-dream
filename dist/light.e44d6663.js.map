@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/light.js"],"names":["entity","addComponent"],"mappings":"AAAA;AAEAA,MAAM,CAACC,YAAP,CAAoB,OAApB","file":"light.e44d6663.js","sourceRoot":"..\\www","sourcesContent":["// Create directional light entity\r\n\r\nentity.addComponent('light');\r\n\r\n\r\n"]}

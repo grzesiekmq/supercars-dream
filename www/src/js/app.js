@@ -14,12 +14,16 @@ function createScene() {
 
     const scene = new Scene(engine);
 
-    const camera = new ArcRotateCamera('ArcRotateCamera', 1, 1, 40, new Vector3(0, 0, -40), scene)
 
+    const camera = new ArcRotateCamera('ArcRotateCamera', 1, 1, 40, new Vector3(0, 0, -40), scene)
     
-    camera.attachControl(canvas, true)
+    function addControls() {
+        camera.attachControl(canvas, true)
+    }
 
     const light = new HemisphericLight("HemiLight", new Vector3(0, 3, -40), scene)
+
+    
 
     scene.enablePhysics();
 
@@ -28,7 +32,7 @@ function createScene() {
     scene.collisionsEnabled = true;
 
 
-    
+
     console.log(scene)
 
     return scene;

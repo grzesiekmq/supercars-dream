@@ -6,34 +6,26 @@
 
     <style>
 body {
-  background: #1d1d1d;
+  background: #fa6800;
 }
-#application-canvas{
+#application-canvas {
   width: 100%;
 }
 
 .block.cars .row .col-100,
-.block.models .row .col-100,
 .block.tracks .row .col-20 {
   width: 17.6vw;
-  text-align: center;
+  height: 30vh;
 }
 
-.block.tracks .row .col-20 {
-  width: 22vw;
-  height: 51vh;
+.block.cars .row .col-100 {
+  height: 10vh;
 }
 
 .block.tracks .row .col-20:nth-of-type(18) > .item-title {
   margin-top: -1px;
 }
 
-.block.models .row .col-100 {
-  width: 22vw;
-  height: 33vh;
-}
-
-#view > .tile-medium,
 .page-content a.tile-medium {
   height: 20vh;
 }

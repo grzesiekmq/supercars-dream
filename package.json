@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server --mode development --hot"
+    "serve": "webpack-dev-server --mode development --hot",
+    "build": "webpack -p"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
@@ -20,10 +21,12 @@
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
     "cannon": "^0.6.2",
+    "clean-webpack-plugin": "^3.0.0",
     "cordova": "^9.0.0",
     "css-loader": "^3.4.0",
     "html-webpack-plugin": "^3.2.0",
     "metro4": "^4.3.4",
+    "pepjs": "^0.5.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
     "vue-router": "^3.1.3",

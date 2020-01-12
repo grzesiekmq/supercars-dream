@@ -30,4 +30,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
+    <content src="dist/index.html" />
+
+
 </widget>

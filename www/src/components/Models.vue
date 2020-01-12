@@ -7,26 +7,19 @@
       <h2>back</h2>
     </router-link>
     <h2
-      class="cars-title fg-orange text-center mt-14-minus"
+      class="cars-title fg-white text-center mt-14-minus"
       v-for="models in filteredModels"
       :key="models.id"
     >Model selection</h2>
-    <router-link
-      :to="{name:'car-select', params: {make: clickedMake, model: model}}"
-      v-for="model in models"
-      :key="model"
-      class="select-car tile-small place-right mt-17-minus p-1 text-center bg-orange border bd-orange outline ol-white fg-black"
-    >Select</router-link>
-
-    <div class="info"></div>
+  
 
     <ul class="inline-list" @click="modelHandler" v-for="models in filteredModels" :key="models.id">
       <li v-for="model in models" :key="model">
         <router-link
           :to="{name:'car-select',params:{ model:model}}"
-          class="col-100 tile-small m-2 p-1 va-middle bg-orange border bd-orange outline ol-white fg-black"
+          class="h-50 tile-medium m-2 p-1 bg-orange border bd-white outline ol-white fg-white"
         >
-          <h4 class="model-name">{{model}}</h4>
+          <h4 class="model-name text-center">{{model}}</h4>
         </router-link>
       </li>
     </ul>
@@ -38,7 +31,8 @@ import axios from "axios";
 import bus from "../eventBus";
 
 import * as BABYLON from "@babylonjs/core";
-
+import { Engine } from "@babylonjs/core";
+import Metro from "metro4";
 import "@babylonjs/loaders/glTF";
 
 import * as Materials from "@babylonjs/materials";
@@ -47,6 +41,7 @@ import scene from "../js/app";
 import { Vector3, Quaternion } from "@babylonjs/core";
 
 const carsPath = "www/assets/models/cars";
+
 const texturesPath = "www/assets/textures";
 
 const json = "www/data/carProps.json";
@@ -88,19 +83,10 @@ const cars = [
 
   {
     name: "bmv",
-    models: [
-      "7",
-      "8 series concept",
-      "i8",
-      "m3 e92",
-      "M3 GTR",
-      "m3",
-      "m5 tuning",
-      "m6"
-    ]
+    models: ["7", "8 series concept", "i8", "m3 GTR", "m3", "m6"]
   },
 
-  { name: "bugati", models: ["chiron", "veyron"] },
+  { name: "bugati", models: ["chiron", "veyron", "centodieci"] },
 
   { name: "cadilac", models: ["cien", "cts"] },
 
@@ -110,7 +96,7 @@ const cars = [
 
   {
     name: "dodg",
-    models: ["viper gts", "viper zrt", "viper", "zrt challenger"]
+    models: ["viper gts", "viper zrt", "viper", "challenger"]
   },
 
   {
@@ -127,13 +113,13 @@ const cars = [
     ]
   },
 
-  { name: "fort", models: ["gt 90", "gt", "mustang salen", "mustang"] },
+  { name: "fort", models: ["gt 90", "fort gt", "mustang salen", "mustang"] },
 
   { name: "henesey", models: ["venom gt"] },
 
   {
     name: "hevrolet",
-    models: ["camaro old", "camaro", "corvete concept", "corvette C7"]
+    models: ["camaro old", "camaro", "corvete concept", "corvete c7"]
   },
 
   { name: "holdem", models: ["monaro"] },
@@ -163,9 +149,9 @@ const cars = [
 
   { name: "luxus", models: ["gs", "lfa"] },
 
-  { name: "maklaren", models: ["576 gt", "f1", "GT", "mp4 12c", "mp4", "p1"] },
+  { name: "maklaren", models: ["576 gt", "f1", "maklaren gt", "mp4", "p1"] },
 
-  { name: "masda", models: ["MX 5", "mx5 2016", "RX 7", "RX 8"] },
+  { name: "masda", models: ["mx5", "mx5 2016", "rx7", "rx8"] },
 
   { name: "maybah", models: ["exelero"] },
 
@@ -195,7 +181,7 @@ const cars = [
       "asterisk",
       "concept car 2009",
       "concept car 7",
-      "concept car5",
+      "concept car 5",
       "exotic car",
       "race car",
       "vm x1",
@@ -203,9 +189,9 @@ const cars = [
     ]
   },
 
-  { name: "pahani", models: ["huayra", "zonda f"] },
+  { name: "pahani", models: ["huayra", "zonda r"] },
 
-  { name: "pontiak", models: ["firebird", "gto"] },
+  { name: "pontiak", models: ["gto"] },
 
   {
     name: "porshe",
@@ -217,7 +203,7 @@ const cars = [
       "boxster s",
       "boxster",
       "carrera gt",
-      "cayman 2017",
+      "cayman",
       "panamera turbo"
     ]
   },
@@ -232,7 +218,7 @@ const cars = [
 
   { name: "shelbi", models: ["cobra"] },
 
-  { name: "tezla", models: ["models s"] },
+  { name: "tezla", models: ["model s"] },
 
   { name: "tojota", models: ["soarer"] },
 
@@ -247,86 +233,112 @@ const cars = [
   { name: "zubaru", models: ["b11s", "impreza"] }
 ];
 
-export function getCar(carName, scene, make) {
+export function getCar(carName, scene, make, topSpeed) {
   function onSuccess(scene) {
-    let track = scene.rootNodes[2];
+    const canvas = document.querySelector("#application-canvas");
+
     let mesh = scene.rootNodes[3];
 
+    let cartest = scene.getNodeByName("avus.gltf");
+
+    // wheels
     let wheelRR = scene.getNodeByName("Audi Avus_0");
     let wheelRL = scene.getNodeByName("Audi Avus_1");
     let wheelFL = scene.getNodeByName("Audi Avus_2");
     let wheelFR = scene.getNodeByName("Audi Avus_3");
-    // todo wheel colliders
+    let wheelpart = scene.getNodeByName("Audi Avus_4");
 
-    const cartest = scene.getNodeByName("avus.gltf");
+    // TODO wheel colliders
 
-    const tracktest = scene.getNodeByName("Barcelona.stl");
+    let trackRoot = scene.rootNodes[2];
 
-    const canvas = document.querySelector("#application-canvas");
+    var boundingbox = new BABYLON.BoundingBoxGizmo();
+    var boundingbox2 = new BABYLON.BoundingBoxGizmo();
+
+    // scale all tracks
+
+    trackRoot.scaling = new Vector3(10, 1, 10);
+
+    // boundingbox2.attachedMesh = trackRoot
+
+    const sizeScale = 0.01;
+    // mesh.scaling = new Vector3(sizeScale, sizeScale, sizeScale)
+
+    // boundingbox.attachedMesh = mesh;
+    console.log("bounding box car", boundingbox._boundingDimensions);
+    console.log("bounding box track", boundingbox2._boundingDimensions);
 
     let forceDirection = mesh.right;
-    const engineForce = 40000;
+    const engineForce = 30000;
     const brakeForce = -20000;
-    const contactLocalRefPoint = new Vector3.Zero();
+
+    const mass = 1250;
+
+    // testing params
+    // in meters
+    const wheelBase = 2.8;
+    const rearTrack = 1.5;
+    const turnCircle = 10;
+    const wheelRadius = 0.22;
+
+    const halfRearTrack = rearTrack * 0.5;
+
+    // Ackermann steering
+    // in rad
+    let ackermannAngleLeft = Math.atan(
+      wheelBase / (turnCircle - halfRearTrack)
+    );
+    let ackermannAngleRight = Math.atan(
+      wheelBase / (turnCircle + halfRearTrack)
+    );
+
+    console.log("angle left", ackermannAngleLeft);
+    console.log("angle right", ackermannAngleRight);
 
     // ground
+    function createGround() {
+      const ground = BABYLON.MeshBuilder.CreateGround(
+        "ground",
+        { width: 10000, height: 4000 },
+        scene
+      );
+      const groundMat = new BABYLON.StandardMaterial("ground Material", scene);
+      groundMat.diffuseTexture = new BABYLON.Texture(
+        `${texturesPath}/grass3.jpg`,
+        scene
+      );
+      groundMat.diffuseTexture.uScale = 50;
+      groundMat.diffuseTexture.vScale = 50;
 
-    const ground = BABYLON.MeshBuilder.CreateGround(
-      "ground",
-      { width: 10000, height: 4000 },
-      scene
-    );
-    const groundMat = new BABYLON.StandardMaterial("ground Material", scene);
-    groundMat.diffuseTexture = new BABYLON.Texture(
-      `${texturesPath}/grass3.jpg`,
-      scene
-    );
-    groundMat.diffuseTexture.uScale = 50;
-    groundMat.diffuseTexture.vScale = 50;
+      ground.material = groundMat;
 
-    ground.material = groundMat;
-
-    // track
-    //  todo texture on track
-
-    tracktest.material = new Materials.TriPlanarMaterial(
-      "track Material",
-      scene
-    );
-    tracktest.material.diffuseTextureX = new BABYLON.Texture(
-      `${texturesPath}/asphalt.jpg`,
-      scene
-    );
-    tracktest.material.diffuseTextureY = tracktest.material.diffuseTextureX;
-    tracktest.material.diffuseTextureZ = tracktest.material.diffuseTextureX;
-
-    tracktest.material.specularPower = 100;
-
-    tracktest.material.tileSize = 100;
+      ground.position.y = -1;
+    }
 
     // skybox
+    function createSkybox() {
+      const skyMat = new Materials.SkyMaterial("skyMaterial", scene);
+      skyMat.backFaceCulling = false;
+      skyMat.luminance = 1;
+      skyMat.inclination = 0;
+      skyMat.turbidity = 100;
 
-    const skyMat = new Materials.SkyMaterial("skyMaterial", scene);
-    skyMat.backFaceCulling = false;
-    skyMat.luminance = 1;
-    skyMat.inclination = 0;
-    skyMat.turbidity = 100;
+      skyMat.cameraOffset.y = 100;
 
-    skyMat.cameraOffset.y = 100;
-
-    const skybox = BABYLON.Mesh.CreateBox("skyBox", 10000, scene);
-    skybox.material = skyMat;
-
+      const skybox = BABYLON.Mesh.CreateBox("skyBox", 10000, scene);
+      skybox.material = skyMat;
+    }
+    //-- impostors --
     // car impostor
     mesh.physicsImpostor = new BABYLON.PhysicsImpostor(
       mesh,
       BABYLON.PhysicsImpostor.BoxImpostor,
-      { mass: 1250 },
+      { mass: mass },
       scene
     );
     // track impostor
-    track.physicsImpostor = new BABYLON.PhysicsImpostor(
-      track,
+    trackRoot.physicsImpostor = new BABYLON.PhysicsImpostor(
+      trackRoot,
       BABYLON.PhysicsImpostor.BoxImpostor,
       { mass: 0 },
       scene
@@ -336,98 +348,194 @@ export function getCar(carName, scene, make) {
 
     mesh.rotationQuaternion = null;
 
-    mesh.rotation.y = 1.5;
+    mesh.rotation.y = -Math.PI / 2;
 
-    track.scaling = new Vector3(10, 1, 10);
-
-    track.position.x = 400;
-    track.position.y = -3;
-    track.position.z = -120;
-
-    ground.position.y = -4;
+    console.log(mesh._children[0].position);
 
     mesh.checkCollisions = true;
-    track.checkCollisions = true;
+    trackRoot.checkCollisions = true;
 
     console.log("before forcedir", forceDirection);
 
     // follow camera
-    const followCam = new BABYLON.FollowCamera(
-      "FollowCam",
-      new Vector3(100, 0, 0),
-      scene
-    );
-    followCam.radius = 10;
-    followCam.heightOffset = 10;
-    followCam.rotationOffset = 0;
+    function createFollowCam() {
+      const followCam = new BABYLON.FollowCamera(
+        "FollowCam",
+        new Vector3(100, 0, 0),
+        scene
+      );
+      followCam.radius = 2;
+      followCam.heightOffset = 3;
+      followCam.rotationOffset = 180;
 
-    followCam.attachControl(canvas, true);
+      followCam.attachControl(canvas, true);
 
-    followCam.lockedTarget = mesh;
+      followCam.lockedTarget = mesh;
 
-    scene.activeCameras.push(followCam);
+      scene.activeCameras.push(followCam);
+    }
 
-    scene.registerBeforeRender(function() {
-      const debug = document.querySelector("#debug");
-      // console.log("pos", mesh.position);
-      if (Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6) <= 0) {
-        debug.innerHTML = `${mesh.physicsImpostor
-          .getLinearVelocity()
-          .z.toFixed(2)} m/s \
-      ${Math.abs(
-        Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6)
-      )} kph`;
+    const speedContainer = document.querySelector(".speed");
+    const distanceContainer = document.querySelector(".distance");
+    const secContainer = document.querySelector("#s");
+    const debug = document.querySelector(".debug");
+    const start = document.querySelector(".start");
+
+    let seconds = 0;
+
+    let num = 4;
+
+    function countdown() {
+      --num;
+      // 3,2,1
+      if (num < 4 && num > 0) {
+        start.textContent = num;
+      }
+      // start as 0
+      else if (num < 1 && num > -1) {
+        start.textContent = "START";
+        function hideStart() {
+          start.style.display = "none";
+        }
+        setTimeout(hideStart, 2000);
       } else {
-        debug.innerHTML = `${mesh.physicsImpostor
-          .getLinearVelocity()
-          .z.toFixed(2)} m/s \
-      ${Math.abs(
+        return;
+      }
+    }
+
+    setInterval(countdown, 1000);
+
+    function update() {
+      let distance = Math.abs(Math.round(mesh.position.x));
+      distanceContainer.textContent = `${distance} m`;
+
+      let speed = Math.abs(
         Math.round(mesh.physicsImpostor.getLinearVelocity().x * 3.6)
-      )} kph R`;
+      );
+
+      function forwardSpeed(speed) {
+        return (speedContainer.textContent = `
+          ${speed} km/h`);
+      }
+      function reverse(speed) {
+        return (speedContainer.textContent = `
+          ${speed} km/h R`);
       }
 
-      if (mesh.intersectsMesh(track)) {
-        console.log("check", "yes");
-      } else {
-        // console.log('no intersection')
+      function timer() {
+        seconds++;
       }
-    });
+
+      let elapsedTime = () => setInterval(timer, 1000);
+
+      elapsedTime = Math.round(elapsedTime());
+
+      // auto accelerate
+      if (start.textContent === "START" && speed <= topSpeed) {
+        secContainer.textContent = elapsedTime;
+        accelerate();
+      }
+
+      if (speed >= 0) {
+        forwardSpeed(speed);
+      } else {
+        reverse(speed);
+      }
+
+      // acceleration 0-100 test
+
+      // if (speed === 100) {
+      //   alert(`acceleration ${elapsedTime}`);
+      // }
+
+    const finishDistance = 1000
+
+      function finishDialog() {
+        const options = {
+          title: "Finish",
+          content: "race finished",
+          onShow: function() {
+            const el = $(this);
+            el.addClass("ani-swoopInTop");
+            setTimeout(() => el.removeClass("ani-swoopInTop"), 500);
+          },
+          onHide: function() {
+            console.log("hide");
+            const el = $(this);
+            el.addClass("ani-swoopOutTop");
+          },
+          actions: [{
+            caption: "Ok",
+            cls: "js-dialog-close primary",
+            onclick: function() {
+              location.href = "/";
+            }
+          }]
+        };
+
+        Metro.dialog.create(options);
+      }
+
+      if (distance === finishDistance) {
+        finishDialog();
+      }
+    }
+
+    // update
+    scene.registerBeforeRender(update);
+
+    function accelerate() {
+      return mesh.physicsImpostor.applyForce(
+        forceDirection.scale(engineForce),
+        mesh.getAbsolutePosition()
+      );
+    }
+
+    function brake() {
+      return mesh.physicsImpostor.applyForce(
+        forceDirection.scale(brakeForce),
+        mesh.getAbsolutePosition()
+      );
+    }
+
+    let angleLeft = -Math.PI / 200;
+    let angleRight = Math.PI / 200;
+
+    console.log("force init x", forceDirection.x);
+
     // keyboard controls
     scene.onKeyboardObservable.add(kbInfo => {
       switch (kbInfo.type) {
         case BABYLON.KeyboardEventTypes.KEYDOWN:
           switch (kbInfo.event.key) {
             case "w":
-              mesh.physicsImpostor.applyForce(
-                forceDirection.scale(engineForce),
-                mesh.getAbsolutePosition().add(contactLocalRefPoint)
-              );
-              console.log("pressed w force", forceDirection);
-
               break;
             case "a":
-              cartest.rotate(
-                BABYLON.Axis.Y,
-                -Math.PI / 64,
-                BABYLON.Space.WORLD
-              );
+              cartest.rotate(BABYLON.Axis.Y, angleLeft, BABYLON.Space.WORLD);
 
-              // forceDirection.z -= Math.PI / 64;
+              if (forceDirection.x < 0) {
+                forceDirection.x -= ackermannAngleLeft;
+              } else if (forceDirection.x > 0) {
+                forceDirection.x -= ackermannAngleLeft;
+              }
 
-              console.log("forcedir", forceDirection);
+              console.log("forcedir left", forceDirection);
+              console.log("rotation", mesh.rotation);
               break;
             case "s":
-              mesh.physicsImpostor.applyForce(
-                forceDirection.scale(brakeForce),
-                mesh.getAbsolutePosition().add(contactLocalRefPoint)
-              );
+              brake();
 
               break;
             case "d":
-              cartest.rotate(BABYLON.Axis.Y, Math.PI / 64, BABYLON.Space.WORLD);
+              cartest.rotate(BABYLON.Axis.Y, angleRight, BABYLON.Space.WORLD);
+              if (forceDirection.x > 0) {
+                forceDirection.x += ackermannAngleRight;
+              } else if (forceDirection.x < 0) {
+                forceDirection.x += ackermannAngleRight;
+              }
+              console.log("forcedir right", forceDirection);
 
-              //  forceDirection.z += Math.PI / 64;
-              console.log(mesh.rotation);
+              console.log("rotation", mesh.rotation);
               break;
 
               break;
@@ -436,8 +544,29 @@ export function getCar(carName, scene, make) {
       }
     });
 
+    function enableJoystick() {
+      const joystick = new BABYLON.VirtualJoystick(true);
+
+      const moveSpeed = 5;
+
+      scene.onBeforeRenderObservable.add(() => {
+        let moveY = joystick.deltaPosition.y * moveSpeed;
+        if (joystick.pressed && moveY > 0) {
+          accelerate();
+          console.log("joy up");
+        } else if (joystick.pressed && moveY < 0) {
+          brake();
+          console.log("joy down");
+        }
+      });
+    }
+
     console.log("car mesh ", mesh);
-    console.log("track", track);
+    console.log("track", trackRoot);
+
+    createGround();
+    createSkybox();
+    createFollowCam();
   }
 
   BABYLON.SceneLoader.Append(`${carsPath}/${make}/`, carName, scene, onSuccess);
@@ -445,17 +574,48 @@ export function getCar(carName, scene, make) {
 
 export default {
   data() {
-    return { cars, clickedMake: "", models: null };
+    return {
+      cars,
+      clickedMake: "",
+      models: null,
+      modelArr: null
+    };
   },
   methods: {
-    getCars() {
-      return axios.get(json).then(response => console.log(response.data));
-    },
     modelHandler(event) {
-      bus.$emit("clickedModel", event.target.textContent.trim());
+      let modelName = event.target.textContent.trim()
+      bus.$emit("clickedModel", modelName);
 
-      const carName = event.target.textContent.trim() + ".gltf";
-      getCar(carName, scene, this.clickedMake);
+      axios.get(json).then(response => {
+        const data = response.data;
+        const make = Object.keys(data).filter(
+          make => make === this.clickedMake
+        );
+
+        console.log(make);
+
+        let carFile = data[make[0]]
+          .filter(model => model.name === modelName)
+          .map(model => model.modelFile);
+
+        this.modelArr = data[make[0]].filter(
+          model => model.name === modelName
+        );
+
+        const modelObj = this.modelArr[0]
+        const topSpeed = modelObj.topSpeed
+
+        // get file from array
+        carFile = carFile[0]
+
+        bus.$emit("modelObj", modelObj);
+
+        console.log("topspeed", topSpeed);
+
+        console.log("car from json", carFile);
+
+        getCar(carFile, scene, this.clickedMake, topSpeed);
+      });
     },
 
     onMakeClicked(clickedMake) {
@@ -480,3 +640,6 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+</style>

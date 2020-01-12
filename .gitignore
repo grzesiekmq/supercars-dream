@@ -9,5 +9,6 @@ typings
 jsconfig.json
 .editorconfig
 yarn.lock
-/dist
+dist
 .cache
+yarn-error.log

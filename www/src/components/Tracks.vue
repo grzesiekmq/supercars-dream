@@ -7,14 +7,14 @@
       <h2>back</h2>
     </router-link>
 
-    <h2 class="tracks-title fg-orange text-center mt-14-minus">Track selection</h2>
-    <div class="block tracks" @click="clickedTrack">
+    <h2 class="tracks-title fg-white text-center mt-14-minus">Track selection</h2>
+    <div class="block tracks" @click="trackHandler">
       <div class="row">
         <router-link
           to="makes"
           v-for="track of tracks"
           :key="track.name"
-          class="col-20 tile-medium m-2 p-1 va-middle bg-orange border bd-orange outline ol-white fg-black"
+          class="col-20 tile-medium m-2 p-1 va-middle bg-orange border bd-white outline ol-white fg-white drop-shadow text-center"
           :id="track.name"
         >
           <h6 class="item-title">{{track.name}}</h6>
@@ -28,8 +28,13 @@
 import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import scene from "../js/app";
+import bus from "../eventBus";
+
+import * as Materials from "@babylonjs/materials";
+import { Vector3, Vector4 } from "@babylonjs/core";
 
 const tracksPath = "www/assets/models/tracks/";
+const texturesPath = "www/assets/textures";
 
 const trackImages = "www/assets/models/tracks/images/";
 const tracks = [
@@ -49,7 +54,7 @@ const tracks = [
   },
 
   /* {
-                    name: 'Circuit de la Sarthe',
+    name: 'Circuit de la Sarthe',
                     image: `${trackImages}Circuit_DeLa_Sarthe.jpg`
                 }, */
 
@@ -139,29 +144,140 @@ const tracks = [
   }
 ];
 
-
-
-
-
 export default {
-  methods: {
-    clickedTrack(event) {
-      const trackName = event.target.textContent.trim() + '.gltf'
-      
-        BABYLON.SceneLoader.Append(
-          `${tracksPath}`,
-          trackName,
-          scene,
-          function(newMeshes) {}
-        );
-      }
-    
-  },
-
-data() {
+  data() {
     return {
       tracks
     };
+  },
+  methods: {
+    trackHandler(event) {
+      const trackName = event.target.textContent.trim();
+      const trackFile = trackName + ".gltf";
+
+      function onSuccess(scene) {
+        let track = scene.getNodeByName(trackName);
+
+        function addMaterial(trackNode) {
+          trackNode.material = new Materials.TriPlanarMaterial(
+            "track Material",
+            scene
+          );
+          trackNode.material.diffuseTextureX = new BABYLON.Texture(
+            `${texturesPath}/asphalt.jpg`,
+            scene
+          );
+          trackNode.material.diffuseTextureY =
+            trackNode.material.diffuseTextureX;
+          trackNode.material.diffuseTextureZ =
+            trackNode.material.diffuseTextureX;
+
+          trackNode.material.specularPower = 100;
+
+          trackNode.material.tileSize = 100;
+        }
+
+        if (trackName !== "Nurburgring") {
+          addMaterial(track);
+        }
+        // change position of track to set car on track
+        switch (trackName) {
+          case "Barcelona":
+            track.position = new Vector3(-40, 0, 12);
+
+            break;
+          case "Bathurst":
+            track.position = new Vector3(-40, 0, 15);
+
+            break;
+          case "Brands-Hatch":
+            track.position = new Vector3(-40, 0, 10);
+
+            break;
+          case "Hungaroring":
+            track.position = new Vector3(-40, 0, 0);
+
+            break;
+          case "Indianapolis":
+            track.position = new Vector3(-40, -8, 0);
+
+            break;
+          case "Interlagos":
+            track.position = new Vector3(-40, -12, 0);
+
+            break;
+          case "Isle-of-Man":
+            track.position = new Vector3(-100, 0, 10);
+
+            break;
+          case "Kyalami":
+            track.position = new Vector3(-40, -10, 12);
+
+            break;
+          case "Laguna-Seca":
+            track.position = new Vector3(-40, 0, 12);
+
+            break;
+          case "Le-Mans":
+            track.position = new Vector3(-40, 0, 12);
+
+            break;
+          case "Magny-Cours":
+            track.position = new Vector3(-40, 2, 0);
+
+            break;
+          case "Monaco":
+            track.position = new Vector3(-40, -10, 20);
+
+            break;
+          case "Montreal":
+            track.position = new Vector3(-60, -35, 12);
+
+            break;
+          case "Monza":
+            track.position = new Vector3(-40, 0, 18);
+
+            break;
+
+          //change position and fix texture
+          case "Nurburgring":
+            track.position = new Vector3(-40, 0, 12);
+
+            const childNode = scene.getNodeByName("xxx");
+
+            addMaterial(childNode);
+
+            break;
+          case "Red-Bull-Ring":
+            track.position = new Vector3(-40, 0, 12);
+
+            break;
+          case "Silverstone":
+            track.position = new Vector3(-420, -150, 100);
+
+            break;
+          case "Spa-Francorchamps":
+            track.position = new Vector4(-40, 0, 25, 1);
+
+            break;
+          case "Suzuka":
+            track.position = new Vector3(-40, 0, 12);
+
+            break;
+          case "Zandvoort":
+            track.position = new Vector3(-40, 0, 6);
+
+            break;
+          // case 'Circuit de la Sarthe':
+
+          //    break;
+        }
+
+        console.log("pos track", track.position);
+      }
+
+      BABYLON.SceneLoader.Append(`${tracksPath}`, trackFile, scene, onSuccess);
+    }
   }
 };
 </script>

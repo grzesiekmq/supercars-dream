@@ -7,32 +7,35 @@
       <h2>back</h2>
     </router-link>
 
-    <h2 class="text-center fg-orange mt-8-minus">modes</h2>
-    <ul class="inline-list text-center">
-      <li>
-        <router-link
-          to="tracks"
-          class="tile-medium mx-2 p-1 text-center va-middle bg-orange outline ol-white fg-black"
-          id="free"
-        >
-          <h2>
-            free
-            <p></p>mode
-          </h2>
-        </router-link>
-      </li>
-      <li>
-        <router-link
-          to="career"
-          class="tile-medium mx-2 p-1 text-center va-middle bg-orange outline ol-white fg-black"
-          id="career"
-        >
-          <h2>
-            career
-            <p></p>mode
-          </h2>
-        </router-link>
-      </li>
-    </ul>
+    <h2 class="text-center fg-white modes-text">modes</h2>
+
+    <div class="d-flex flex-align-center flex-justify-center text-center">
+      <router-link
+        to="tracks"
+        class="tile-medium mx-2 p-1 text-center va-middle bg-orange outline ol-white border bd-white fg-white"
+        id="free"
+      >
+        <h2>
+          free
+          <p></p>mode
+        </h2>
+      </router-link>
+
+      <router-link
+        to="career"
+        class="tile-medium mx-2 p-1 text-center va-middle bg-orange outline ol-white border bd-white fg-white"
+        id="career"
+      >
+        <h2>
+          career
+          <p></p>mode
+        </h2>
+      </router-link>
+    </div>
   </div>
 </template>
+<style scoped>
+.modes-text {
+  margin-top: -120px;
+}
+</style>

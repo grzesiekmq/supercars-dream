@@ -71,7 +71,7 @@
     ],
     "alfa": [
         {
-            "name": "8c",
+            "name": "8c spider",
             "acceleration": 4.2,
             "topSpeed": 292,
             "modelFile": "8c-spider.gltf"
@@ -109,7 +109,7 @@
             "modelFile": "dbs-volante.gltf"
         },
         {
-            "name": "one77",
+            "name": "one 77",
             "acceleration": 3.5,
             "topSpeed": 354,
             "modelFile": "one-77.gltf"
@@ -167,7 +167,7 @@
             "modelFile": "m3.gltf"
         },
         {
-            "name": "m3 gtr",
+            "name": "m3 GTR",
             "acceleration": 3.2,
             "topSpeed": 322,
             "modelFile": "M3-GTR.gltf"
@@ -351,7 +351,7 @@
             "modelFile": "f12.gltf"
         },
         {
-            "name": "laferari",
+            "name": "la ferari",
             "acceleration": 2.6,
             "topSpeed": 349,
             "modelFile": "la-ferari.gltf"
@@ -371,7 +371,7 @@
     ],
     "fort": [
         {
-            "name": "gt",
+            "name": "fort gt",
             "acceleration": 4,
             "topSpeed": 348,
             "modelFile": "fort-gt.gltf"
@@ -543,7 +543,7 @@
     ],
     "mazerati": [
         {
-            "name": "gt",
+            "name": "G Turismo",
             "acceleration": 4.7,
             "topSpeed": 302,
             "modelFile": "mazerati-GT.gltf"
@@ -621,7 +621,7 @@
             "modelFile": "f1.gltf"
         },
         {
-            "name": "gt",
+            "name": "maklaren gt",
             "acceleration": 3.1,
             "topSpeed": 326,
             "modelFile": "maklaren-GT.gltf"
@@ -813,10 +813,10 @@
             "modelFile": "huayra.gltf"
         },
         {
-            "name": "zonda",
+            "name": "zonda r",
             "acceleration": 3.8,
             "topSpeed": 366,
-            "modelFile": "zonda-f.gltf"
+            "modelFile": "zonda-r.gltf"
         }
     ],
     "porshe": [
