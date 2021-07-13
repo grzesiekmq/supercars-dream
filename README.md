@@ -1,6 +1,6 @@
 # Supercars dream game
 
 
-see also this project https://github.com/grzesiekmq/supercars-viz
+see also this project https://github.com/grzesiekmq/showroom
 
 ![Screenshot](supercarsdream.PNG)
